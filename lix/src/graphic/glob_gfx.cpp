@@ -83,7 +83,6 @@ void load_all_bitmaps()
 }
 
 
-
 void destroy_all_bitmaps()
 {
     color.clear();

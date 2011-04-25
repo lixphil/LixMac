@@ -110,7 +110,7 @@ Sound::Sound()
 :
     sample(MAX)
 {
-    #ifdef ALLEGRO_WINDOWS
+    #if defined(ALLEGRO_WINDOWS) || defined(ALLEGRO_MACOSX)
         // Letzter Parameter 0 macht nix, ist nur notwendige Syntax
         install_sound(DIGI_AUTODETECT, MIDI_NONE, 0);
     #else
