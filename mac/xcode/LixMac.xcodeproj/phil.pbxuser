@@ -409,6 +409,11 @@
 		vrLoc = 961;
 	};
 	4A5FE3E013655D10006350A3 /* ReadMe.rtf */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.rtf;
+		name = ReadMe.rtf;
+		path = "/Users/phil/Development/Main Dev/LixMac/ReadMe.rtf";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {913, 1080}}";
 			sepNavSelRange = "{214, 0}";
@@ -1176,9 +1181,9 @@
 	};
 	4AABB758132A47F900A5A71B /* LixServAppController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {866, 1729}}";
+			sepNavIntBoundsRect = "{{0, 0}, {866, 1742}}";
 			sepNavSelRange = "{824, 0}";
-			sepNavVisRange = "{0, 641}";
+			sepNavVisRange = "{3, 655}";
 			sepNavWindowFrame = "{{38, 319}, {721, 684}}";
 		};
 	};

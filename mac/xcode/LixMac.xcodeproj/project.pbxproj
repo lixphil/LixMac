@@ -231,7 +231,6 @@
 		4A524B21132F6AF100633A0E /* lixServerIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4A0CE1F3132C80B800081F62 /* lixServerIcon.icns */; };
 		4A524B22132F6AF700633A0E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF37478131E535B00157DB3 /* Cocoa.framework */; };
 		4A5FE3BE13655AEB006350A3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF37478131E535B00157DB3 /* Cocoa.framework */; };
-		4A5FE3E113655D10006350A3 /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4A5FE3E013655D10006350A3 /* ReadMe.rtf */; };
 		4A5FE3F313655F84006350A3 /* libenet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5FE3F213655F84006350A3 /* libenet.a */; };
 		4A5FE3F513655F9A006350A3 /* libenet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5FE3F213655F84006350A3 /* libenet.a */; };
 		4A5FE3F613655F9B006350A3 /* libenet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5FE3F213655F84006350A3 /* libenet.a */; };
@@ -245,6 +244,7 @@
 		4A6CC60B1365982C00A48E21 /* liballeg.4.4.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */; };
 		4A6CC629136599D700A48E21 /* liballeg.4.4.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */; };
 		4A6CC63313659A7100A48E21 /* liballeg-main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6CC5B9136591AC00A48E21 /* liballeg-main.a */; };
+		4A6CC6561365AB5800A48E21 /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4A6CC6551365AB5800A48E21 /* ReadMe.rtf */; };
 		4A9D06E71329ED5700BFFD95 /* lixIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4A9D06E61329ED5700BFFD95 /* lixIcon.icns */; };
 		4AABB4D8132A3EF000A5A71B /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4A8D0CAD1325FF3800B09851 /* MainMenu.nib */; };
 		4AABB78B132A4AB900A5A71B /* LixMacAppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB40F132A3CF800A5A71B /* LixMacAppController.mm */; };
@@ -340,10 +340,10 @@
 		4A5249FD132F676800633A0E /* lixserv */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lixserv; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A524B0A132F6A4400633A0E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = source/server/main.m; sourceTree = "<group>"; };
 		4A524B17132F6ACE00633A0E /* LixServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LixServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A5FE3E013655D10006350A3 /* ReadMe.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ReadMe.rtf; path = ../../ReadMe.rtf; sourceTree = SOURCE_ROOT; };
 		4A5FE3F213655F84006350A3 /* libenet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libenet.a; path = /usr/local/lib/libenet.a; sourceTree = "<absolute>"; };
 		4A6CC5B9136591AC00A48E21 /* liballeg-main.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballeg-main.a"; path = "/usr/local/lib/liballeg-main.a"; sourceTree = "<absolute>"; };
 		4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liballeg.4.4.1.dylib; path = /usr/local/lib/liballeg.4.4.1.dylib; sourceTree = "<absolute>"; };
+		4A6CC6551365AB5800A48E21 /* ReadMe.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = "<group>"; };
 		4A8D0CAD1325FF3800B09851 /* MainMenu.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = MainMenu.nib; path = client/MainMenu.nib; sourceTree = "<group>"; };
 		4A9D06E61329ED5700BFFD95 /* lixIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = lixIcon.icns; path = client/lixIcon.icns; sourceTree = "<group>"; };
 		4AABB2B4132A3CDD00A5A71B /* brow_sav.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = brow_sav.cpp; sourceTree = "<group>"; };
@@ -624,7 +624,7 @@
 		29B97314FDCFA39411CA2CEA /* LixMac */ = {
 			isa = PBXGroup;
 			children = (
-				4A5FE3E013655D10006350A3 /* ReadMe.rtf */,
+				4A6CC6551365AB5800A48E21 /* ReadMe.rtf */,
 				29B97315FDCFA39411CA2CEA /* Lix Core */,
 				4A8D0CE4132603DD00B09851 /* Mac Extras */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -1273,7 +1273,7 @@
 				4A9D06E71329ED5700BFFD95 /* lixIcon.icns in Resources */,
 				4AABB4D8132A3EF000A5A71B /* MainMenu.nib in Resources */,
 				4A3620B11363D2610037061F /* LixMac-Info.plist in Resources */,
-				4A5FE3E113655D10006350A3 /* ReadMe.rtf in Resources */,
+				4A6CC6561365AB5800A48E21 /* ReadMe.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
