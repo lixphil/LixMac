@@ -40,3 +40,6 @@ lix/replay/*
 lix/bitmap/Tutorial Files/*
 lix/levels/Tutorial/*
 lix/levels/test/*
+
+# exclude Xcode build directory files
+mac/xcode/build/*
