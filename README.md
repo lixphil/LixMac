@@ -1,12 +1,13 @@
 # Lix (for Mac OS X)
-## Mac OS X version & Cocoa server frontend by "lixphil"
-## Game codebase by "SimonN"
+Mac OS X version & Cocoa server frontend by "lixphil"
+Game codebase by "SimonN"
 
 ### Introduction
 
 This is the Mac OS X fork for SimonN's game, Lix. It essentially contains an Xcode project with the appropriate configuration as well as some other Mac-specific resources and minor enhancements. It'll be a personal project, which, over time I'll gradually update.
 
 The project contains four targets:
+
 * LixCore, a framework containing all of the core Lix code
 * LixMac, an executable that is linked with LixCore and provides a few niceties exclusive to the Mac platform
 * lixserv, the command-line utility used to run a dedicated Lix server
@@ -31,15 +32,15 @@ For enet, I had a bit more difficulty and had to individually compile separate l
 
 Firstly, open ./mac/xcode/LixMac.xcodeproj.
 
-To build the game (client):
+##### To build the game (client):
 
 Select the "LixMac" target, and "Build and Run".
 
-To build the server (with the frontend):
+##### To build the server (with the frontend):
 
 Change the target to "LixServer". (or lixserv if you only want the server executable and not the controller app), and "Build and Run".
 
-To build the server (with just the server binary):
+##### To build the server (with just the server binary):
 
 1. Change the target to "lixserv", and "Build and Run".
 2. Move ./mac/xcode/build/Debug/LixCore.framework to /Library/Frameworks.
