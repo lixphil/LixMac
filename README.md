@@ -52,7 +52,9 @@ Change the target to "LixServer". (or lixserv if you only want the server execut
 
 #### Other Notes
 
-There are lots of things which are incomplete and/or buggy. In the Xcode project, do a project find for "TODO". My email address is aborttrap@gmail.com if you've got any questions.
+There are lots of things which are incomplete and/or buggy. In the Xcode project, do a project find for "TODO". 
+
+To contact me, my email address is in my GitHub profile.
 
 
 Have fun!
