@@ -1,5 +1,6 @@
 # Lix (for Mac OS X)
 Mac OS X version & Cocoa server frontend by "lixphil"
+
 Game codebase by "SimonN"
 
 ### Introduction
@@ -55,5 +56,5 @@ There are lots of things which are incomplete and/or buggy. In the Xcode project
 
 
 Have fun!
-lixphil
 
+lixphil
