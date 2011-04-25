@@ -221,9 +221,7 @@
 		4A3FB1FE13372E8F002C6C41 /* user.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AABB38C132A3CDD00A5A71B /* user.h */; };
 		4A3FB21613372FC2002C6C41 /* LixCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3FB0BD1337258A002C6C41 /* LixCore.framework */; };
 		4A3FB21F133730D9002C6C41 /* LixCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3FB0BD1337258A002C6C41 /* LixCore.framework */; };
-		4A3FB30613373312002C6C41 /* liballeg-main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF372B8131E495000157DB3 /* liballeg-main.a */; };
 		4A524A7B132F67A500633A0E /* s_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A5249E3132F66BA00633A0E /* s_main.cpp */; };
-		4A524ADC132F67BD00633A0E /* liballeg-main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF372B8131E495000157DB3 /* liballeg-main.a */; };
 		4A524B1A132F6AE500633A0E /* LixServAppController.h in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB757132A47F900A5A71B /* LixServAppController.h */; };
 		4A524B1B132F6AE500633A0E /* LixServAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB758132A47F900A5A71B /* LixServAppController.m */; };
 		4A524B1C132F6AE500633A0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A524B0A132F6A4400633A0E /* main.m */; };
@@ -237,16 +235,21 @@
 		4A5FE3F313655F84006350A3 /* libenet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5FE3F213655F84006350A3 /* libenet.a */; };
 		4A5FE3F513655F9A006350A3 /* libenet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5FE3F213655F84006350A3 /* libenet.a */; };
 		4A5FE3F613655F9B006350A3 /* libenet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5FE3F213655F84006350A3 /* libenet.a */; };
-		4A5FE3FD13655FEA006350A3 /* liballeg.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5FE3FC13655FEA006350A3 /* liballeg.dylib */; };
-		4A5FE40D136563F2006350A3 /* liballeg.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5FE3FC13655FEA006350A3 /* liballeg.dylib */; };
-		4A5FE40E136563FB006350A3 /* liballeg.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5FE3FC13655FEA006350A3 /* liballeg.dylib */; };
+		4A6CC5BA136591AC00A48E21 /* liballeg-main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6CC5B9136591AC00A48E21 /* liballeg-main.a */; };
+		4A6CC5C5136592FD00A48E21 /* liballeg-main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6CC5B9136591AC00A48E21 /* liballeg-main.a */; };
+		4A6CC5F6136597AA00A48E21 /* liballeg.4.4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */; };
+		4A6CC5FB136597B600A48E21 /* liballeg.4.4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */; };
+		4A6CC5FC136597B700A48E21 /* liballeg.4.4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */; };
+		4A6CC601136597D300A48E21 /* liballeg.4.4.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */; };
+		4A6CC6081365981300A48E21 /* liballeg.4.4.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */; };
+		4A6CC60B1365982C00A48E21 /* liballeg.4.4.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */; };
+		4A6CC629136599D700A48E21 /* liballeg.4.4.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */; };
+		4A6CC63313659A7100A48E21 /* liballeg-main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6CC5B9136591AC00A48E21 /* liballeg-main.a */; };
 		4A9D06E71329ED5700BFFD95 /* lixIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4A9D06E61329ED5700BFFD95 /* lixIcon.icns */; };
 		4AABB4D8132A3EF000A5A71B /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4A8D0CAD1325FF3800B09851 /* MainMenu.nib */; };
 		4AABB78B132A4AB900A5A71B /* LixMacAppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB40F132A3CF800A5A71B /* LixMacAppController.mm */; };
 		4AB137AD1345C74400898306 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB388132A3CDD00A5A71B /* main.mm */; };
 		4ACAAAC5136552670040D075 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF37478131E535B00157DB3 /* Cocoa.framework */; };
-		4ACAAAE3136552DB0040D075 /* liballeg-main.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4AF372B8131E495000157DB3 /* liballeg-main.a */; };
-		4ACAAB07136554190040D075 /* liballeg-main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF372B8131E495000157DB3 /* liballeg-main.a */; };
 		4AD537541330C79A003E4EC3 /* lixserv in Resources */ = {isa = PBXBuildFile; fileRef = 4A5249FD132F676800633A0E /* lixserv */; };
 		4AD537B61330CF50003E4EC3 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4AD537B51330CF50003E4EC3 /* Credits.rtf */; };
 		4AE4D9A2134351C30090659E /* LixCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A3FB0BD1337258A002C6C41 /* LixCore.framework */; };
@@ -284,7 +287,28 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				4A6CC6081365981300A48E21 /* liballeg.4.4.1.dylib in CopyFiles */,
 				4A107F5713449040000913DF /* LixCore.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A6CC60E1365984300A48E21 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4A6CC60B1365982C00A48E21 /* liballeg.4.4.1.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A6CC62C136599DC00A48E21 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				4A6CC629136599D700A48E21 /* liballeg.4.4.1.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +318,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4ACAAAE3136552DB0040D075 /* liballeg-main.a in CopyFiles */,
+				4A6CC601136597D300A48E21 /* liballeg.4.4.1.dylib in CopyFiles */,
 				4AE4D9A2134351C30090659E /* LixCore.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,7 +342,8 @@
 		4A524B17132F6ACE00633A0E /* LixServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LixServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5FE3E013655D10006350A3 /* ReadMe.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ReadMe.rtf; path = ../../ReadMe.rtf; sourceTree = SOURCE_ROOT; };
 		4A5FE3F213655F84006350A3 /* libenet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libenet.a; path = /usr/local/lib/libenet.a; sourceTree = "<absolute>"; };
-		4A5FE3FC13655FEA006350A3 /* liballeg.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liballeg.dylib; path = /usr/local/lib/liballeg.dylib; sourceTree = "<absolute>"; };
+		4A6CC5B9136591AC00A48E21 /* liballeg-main.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballeg-main.a"; path = "/usr/local/lib/liballeg-main.a"; sourceTree = "<absolute>"; };
+		4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liballeg.4.4.1.dylib; path = /usr/local/lib/liballeg.4.4.1.dylib; sourceTree = "<absolute>"; };
 		4A8D0CAD1325FF3800B09851 /* MainMenu.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = MainMenu.nib; path = client/MainMenu.nib; sourceTree = "<group>"; };
 		4A9D06E61329ED5700BFFD95 /* lixIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = lixIcon.icns; path = client/lixIcon.icns; sourceTree = "<group>"; };
 		4AABB2B4132A3CDD00A5A71B /* brow_sav.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = brow_sav.cpp; sourceTree = "<group>"; };
@@ -535,7 +560,6 @@
 		4AABB757132A47F900A5A71B /* LixServAppController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = LixServAppController.h; path = source/server/LixServAppController.h; sourceTree = "<group>"; };
 		4AABB758132A47F900A5A71B /* LixServAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LixServAppController.m; path = source/server/LixServAppController.m; sourceTree = "<group>"; };
 		4AD537B51330CF50003E4EC3 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Credits.rtf; path = server/Credits.rtf; sourceTree = "<group>"; };
-		4AF372B8131E495000157DB3 /* liballeg-main.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballeg-main.a"; path = "/usr/local/lib/liballeg-main.a"; sourceTree = "<absolute>"; };
 		4AF37478131E535B00157DB3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		846C14D30B1F65CE0012B69D /* Lix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -545,10 +569,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A3FB30613373312002C6C41 /* liballeg-main.a in Frameworks */,
-				4A5FE40E136563FB006350A3 /* liballeg.dylib in Frameworks */,
 				4ACAAAC5136552670040D075 /* Cocoa.framework in Frameworks */,
 				4A5FE3F613655F9B006350A3 /* libenet.a in Frameworks */,
+				4A6CC5BA136591AC00A48E21 /* liballeg-main.a in Frameworks */,
+				4A6CC5FC136597B700A48E21 /* liballeg.4.4.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,11 +580,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A6CC63313659A7100A48E21 /* liballeg-main.a in Frameworks */,
 				4A3FB21F133730D9002C6C41 /* LixCore.framework in Frameworks */,
-				4A524ADC132F67BD00633A0E /* liballeg-main.a in Frameworks */,
-				4A5FE40D136563F2006350A3 /* liballeg.dylib in Frameworks */,
 				4A5FE3BE13655AEB006350A3 /* Cocoa.framework in Frameworks */,
 				4A5FE3F513655F9A006350A3 /* libenet.a in Frameworks */,
+				4A6CC5FB136597B600A48E21 /* liballeg.4.4.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,11 +600,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ACAAB07136554190040D075 /* liballeg-main.a in Frameworks */,
 				4A3FB21613372FC2002C6C41 /* LixCore.framework in Frameworks */,
 				4AF37479131E535B00157DB3 /* Cocoa.framework in Frameworks */,
 				4A5FE3F313655F84006350A3 /* libenet.a in Frameworks */,
-				4A5FE3FD13655FEA006350A3 /* liballeg.dylib in Frameworks */,
+				4A6CC5C5136592FD00A48E21 /* liballeg-main.a in Frameworks */,
+				4A6CC5F6136597AA00A48E21 /* liballeg.4.4.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,8 +667,8 @@
 		29B97323FDCFA39411CA2CEA /* Libraries & Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4A5FE3FC13655FEA006350A3 /* liballeg.dylib */,
-				4AF372B8131E495000157DB3 /* liballeg-main.a */,
+				4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */,
+				4A6CC5B9136591AC00A48E21 /* liballeg-main.a */,
 				4A5FE3F213655F84006350A3 /* libenet.a */,
 				4AF37478131E535B00157DB3 /* Cocoa.framework */,
 				4A3FB0BD1337258A002C6C41 /* LixCore.framework */,
@@ -1114,10 +1138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A3FB0C01337258B002C6C41 /* Build configuration list for PBXNativeTarget "LixCore" */;
 			buildPhases = (
+				4A6CC60E1365984300A48E21 /* CopyFiles */,
 				4A3FB0B81337258A002C6C41 /* Headers */,
 				4A3FB0B91337258A002C6C41 /* Resources */,
 				4A3FB0BA1337258A002C6C41 /* Sources */,
 				4A3FB0BB1337258A002C6C41 /* Frameworks */,
+				4A6CC612136598A000A48E21 /* Fix dyld search path for liballeg.dylib */,
 			);
 			buildRules = (
 			);
@@ -1132,6 +1158,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A524A04132F678500633A0E /* Build configuration list for PBXNativeTarget "lixserv" */;
 			buildPhases = (
+				4A6CC62C136599DC00A48E21 /* CopyFiles */,
 				4A5249FA132F676800633A0E /* Sources */,
 				4A5249FB132F676800633A0E /* Frameworks */,
 			);
@@ -1152,8 +1179,9 @@
 				4A107F6113449062000913DF /* CopyFiles */,
 				4A524B13132F6ACE00633A0E /* Resources */,
 				4A524B14132F6ACE00633A0E /* Sources */,
-				4AD537891330CACF003E4EC3 /* ShellScript */,
+				4AD537891330CACF003E4EC3 /* Move lixserv and library into bundle */,
 				4A524B15132F6ACE00633A0E /* Frameworks */,
+				4A6CC64313659DA300A48E21 /* Fix dyld search path of liballeg.dylib */,
 			);
 			buildRules = (
 			);
@@ -1173,6 +1201,7 @@
 				846C14C80B1F65CE0012B69D /* Resources */,
 				846C14C90B1F65CE0012B69D /* Sources */,
 				846C14CB0B1F65CE0012B69D /* Frameworks */,
+				4A6CC5DC1365962700A48E21 /* Fix dyld search path of liballeg.dylib */,
 			);
 			buildRules = (
 			);
@@ -1251,13 +1280,56 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4AD537891330CACF003E4EC3 /* ShellScript */ = {
+		4A6CC5DC1365962700A48E21 /* Fix dyld search path of liballeg.dylib */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Fix dyld search path of liballeg.dylib";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This will change the search path of liballeg to be inside this bundle's Frameworks folder.\ncd \"$BUILD_DIR/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/$PRODUCT_NAME.app/Contents/MacOS\"\ninstall_name_tool -change liballeg.4.4.dylib @executable_path/../Frameworks/liballeg.4.4.1.dylib $PRODUCT_NAME";
+		};
+		4A6CC612136598A000A48E21 /* Fix dyld search path for liballeg.dylib */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Fix dyld search path for liballeg.dylib";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This will change the search path of liballeg to be inside this bundle's Frameworks folder.\ncd \"$BUILD_DIR/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/$PRODUCT_NAME.framework/Versions/$FRAMEWORK_VERSION/\"\ninstall_name_tool -change liballeg.4.4.dylib @executable_path/../Frameworks/liballeg.4.4.1.dylib $PRODUCT_NAME";
+		};
+		4A6CC64313659DA300A48E21 /* Fix dyld search path of liballeg.dylib */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Fix dyld search path of liballeg.dylib";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# We'll want to change the search path for lixserv, as this meant to be a more user-friendly version of the server.\ncd \"$BUILD_DIR/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/$PRODUCT_NAME.app/Contents/MacOS\"\ninstall_name_tool -change liballeg.4.4.dylib @executable_path/../Frameworks/liballeg.4.4.1.dylib lixserv";
+		};
+		4AD537891330CACF003E4EC3 /* Move lixserv and library into bundle */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Move lixserv and library into bundle";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1546,7 +1618,9 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 				);
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../lib\"";
+				OTHER_LDFLAGS = "-lenet";
 				PRODUCT_NAME = Lix;
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
 				SYMROOT = build;
 				WRAPPER_EXTENSION = app;
 			};
