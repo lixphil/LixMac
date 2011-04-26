@@ -79,7 +79,7 @@
 		4A3FB16F13372E8F002C6C41 /* effect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB2F6132A3CDD00A5A71B /* effect.cpp */; };
 		4A3FB17013372E8F002C6C41 /* effect.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AABB2F7132A3CDD00A5A71B /* effect.h */; };
 		4A3FB17113372E8F002C6C41 /* gamepl_a.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB2F8132A3CDD00A5A71B /* gamepl_a.cpp */; };
-		4A3FB17213372E8F002C6C41 /* gamepl_c.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB2F9132A3CDD00A5A71B /* gamepl_c.cpp */; };
+		4A3FB17213372E8F002C6C41 /* gamepl_c.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB2F9132A3CDD00A5A71B /* gamepl_c.mm */; };
 		4A3FB17313372E8F002C6C41 /* gamepl_d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB2FA132A3CDD00A5A71B /* gamepl_d.cpp */; };
 		4A3FB17413372E8F002C6C41 /* gamepl_u.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB2FB132A3CDD00A5A71B /* gamepl_u.cpp */; };
 		4A3FB17513372E8F002C6C41 /* gameplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB2FC132A3CDD00A5A71B /* gameplay.cpp */; };
@@ -211,7 +211,7 @@
 		4A3FB1F313372E8F002C6C41 /* io.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AABB381132A3CDD00A5A71B /* io.h */; };
 		4A3FB1F413372E8F002C6C41 /* language.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB382132A3CDD00A5A71B /* language.cpp */; };
 		4A3FB1F513372E8F002C6C41 /* language.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AABB383132A3CDD00A5A71B /* language.h */; };
-		4A3FB1F613372E8F002C6C41 /* lmain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB384132A3CDD00A5A71B /* lmain.cpp */; };
+		4A3FB1F613372E8F002C6C41 /* lmain.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB384132A3CDD00A5A71B /* lmain.mm */; };
 		4A3FB1F713372E8F002C6C41 /* lmain.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AABB385132A3CDD00A5A71B /* lmain.h */; };
 		4A3FB1F813372E8F002C6C41 /* log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB386132A3CDD00A5A71B /* log.cpp */; };
 		4A3FB1F913372E8F002C6C41 /* log.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AABB387132A3CDD00A5A71B /* log.h */; };
@@ -221,6 +221,9 @@
 		4A3FB1FE13372E8F002C6C41 /* user.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AABB38C132A3CDD00A5A71B /* user.h */; };
 		4A3FB21613372FC2002C6C41 /* LixCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3FB0BD1337258A002C6C41 /* LixCore.framework */; };
 		4A3FB21F133730D9002C6C41 /* LixCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3FB0BD1337258A002C6C41 /* LixCore.framework */; };
+		4A4264D61366D6E60038EA73 /* LixMacManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4264A21366D4970038EA73 /* LixMacManager.m */; };
+		4A42652A1366DAE50038EA73 /* LixMacManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4264A21366D4970038EA73 /* LixMacManager.m */; };
+		4A4265E11366EE910038EA73 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4A4265E01366EE910038EA73 /* Credits.rtf */; };
 		4A524A7B132F67A500633A0E /* s_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A5249E3132F66BA00633A0E /* s_main.cpp */; };
 		4A524B1A132F6AE500633A0E /* LixServAppController.h in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB757132A47F900A5A71B /* LixServAppController.h */; };
 		4A524B1B132F6AE500633A0E /* LixServAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB758132A47F900A5A71B /* LixServAppController.m */; };
@@ -336,6 +339,9 @@
 		4A3620B01363D25C0037061F /* LixServer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "LixServer-Info.plist"; path = "../info/LixServer-Info.plist"; sourceTree = "<group>"; };
 		4A3FB0BD1337258A002C6C41 /* LixCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LixCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A3FB0BE1337258A002C6C41 /* LixCore-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "LixCore-Info.plist"; path = "../info/LixCore-Info.plist"; sourceTree = "<group>"; };
+		4A4264A11366D4970038EA73 /* LixMacManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LixMacManager.h; sourceTree = "<group>"; };
+		4A4264A21366D4970038EA73 /* LixMacManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LixMacManager.m; sourceTree = "<group>"; };
+		4A4265E01366EE910038EA73 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Credits.rtf; path = client/Credits.rtf; sourceTree = "<group>"; };
 		4A5249E3132F66BA00633A0E /* s_main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = s_main.cpp; sourceTree = "<group>"; };
 		4A5249FD132F676800633A0E /* lixserv */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lixserv; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A524B0A132F6A4400633A0E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = source/server/main.m; sourceTree = "<group>"; };
@@ -412,7 +418,7 @@
 		4AABB2F6132A3CDD00A5A71B /* effect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = effect.cpp; sourceTree = "<group>"; };
 		4AABB2F7132A3CDD00A5A71B /* effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = effect.h; sourceTree = "<group>"; };
 		4AABB2F8132A3CDD00A5A71B /* gamepl_a.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gamepl_a.cpp; sourceTree = "<group>"; };
-		4AABB2F9132A3CDD00A5A71B /* gamepl_c.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gamepl_c.cpp; sourceTree = "<group>"; };
+		4AABB2F9132A3CDD00A5A71B /* gamepl_c.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = gamepl_c.mm; sourceTree = "<group>"; };
 		4AABB2FA132A3CDD00A5A71B /* gamepl_d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gamepl_d.cpp; sourceTree = "<group>"; };
 		4AABB2FB132A3CDD00A5A71B /* gamepl_u.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gamepl_u.cpp; sourceTree = "<group>"; };
 		4AABB2FC132A3CDD00A5A71B /* gameplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gameplay.cpp; sourceTree = "<group>"; };
@@ -544,7 +550,7 @@
 		4AABB381132A3CDD00A5A71B /* io.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = io.h; sourceTree = "<group>"; };
 		4AABB382132A3CDD00A5A71B /* language.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = language.cpp; sourceTree = "<group>"; };
 		4AABB383132A3CDD00A5A71B /* language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = language.h; sourceTree = "<group>"; };
-		4AABB384132A3CDD00A5A71B /* lmain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lmain.cpp; sourceTree = "<group>"; };
+		4AABB384132A3CDD00A5A71B /* lmain.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = lmain.mm; sourceTree = "<group>"; };
 		4AABB385132A3CDD00A5A71B /* lmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lmain.h; sourceTree = "<group>"; };
 		4AABB386132A3CDD00A5A71B /* log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = log.cpp; sourceTree = "<group>"; };
 		4AABB387132A3CDD00A5A71B /* log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
@@ -688,6 +694,7 @@
 		4A3622541363D2DE0037061F /* Info */ = {
 			isa = PBXGroup;
 			children = (
+				4A4265E01366EE910038EA73 /* Credits.rtf */,
 				4AD537B51330CF50003E4EC3 /* Credits.rtf */,
 				4A3FB0BE1337258A002C6C41 /* LixCore-Info.plist */,
 				4A3620AF1363D25C0037061F /* LixMac-Info.plist */,
@@ -723,6 +730,8 @@
 				4AABB75A132A481000A5A71B /* Game */,
 				4AABB410132A3CF800A5A71B /* LixMacMacros.h */,
 				4AABB75B132A481500A5A71B /* Server */,
+				4A4264A11366D4970038EA73 /* LixMacManager.h */,
+				4A4264A21366D4970038EA73 /* LixMacManager.m */,
 			);
 			name = "Mac Extras";
 			path = ..;
@@ -819,7 +828,7 @@
 				4AABB2F6132A3CDD00A5A71B /* effect.cpp */,
 				4AABB2F7132A3CDD00A5A71B /* effect.h */,
 				4AABB2F8132A3CDD00A5A71B /* gamepl_a.cpp */,
-				4AABB2F9132A3CDD00A5A71B /* gamepl_c.cpp */,
+				4AABB2F9132A3CDD00A5A71B /* gamepl_c.mm */,
 				4AABB2FA132A3CDD00A5A71B /* gamepl_d.cpp */,
 				4AABB2FB132A3CDD00A5A71B /* gamepl_u.cpp */,
 				4AABB2FC132A3CDD00A5A71B /* gameplay.cpp */,
@@ -993,7 +1002,7 @@
 				4AABB381132A3CDD00A5A71B /* io.h */,
 				4AABB382132A3CDD00A5A71B /* language.cpp */,
 				4AABB383132A3CDD00A5A71B /* language.h */,
-				4AABB384132A3CDD00A5A71B /* lmain.cpp */,
+				4AABB384132A3CDD00A5A71B /* lmain.mm */,
 				4AABB385132A3CDD00A5A71B /* lmain.h */,
 				4AABB386132A3CDD00A5A71B /* log.cpp */,
 				4AABB387132A3CDD00A5A71B /* log.h */,
@@ -1274,6 +1283,7 @@
 				4AABB4D8132A3EF000A5A71B /* MainMenu.nib in Resources */,
 				4A3620B11363D2610037061F /* LixMac-Info.plist in Resources */,
 				4A6CC6561365AB5800A48E21 /* ReadMe.rtf in Resources */,
+				4A4265E11366EE910038EA73 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1343,6 +1353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A4264D61366D6E60038EA73 /* LixMacManager.m in Sources */,
 				4A3FB13013372E8F002C6C41 /* brow_sav.cpp in Sources */,
 				4A3FB13213372E8F002C6C41 /* b_bitmap.cpp in Sources */,
 				4A3FB13413372E8F002C6C41 /* b_combin.cpp in Sources */,
@@ -1377,7 +1388,7 @@
 				4A3FB16D13372E8F002C6C41 /* chat.cpp in Sources */,
 				4A3FB16F13372E8F002C6C41 /* effect.cpp in Sources */,
 				4A3FB17113372E8F002C6C41 /* gamepl_a.cpp in Sources */,
-				4A3FB17213372E8F002C6C41 /* gamepl_c.cpp in Sources */,
+				4A3FB17213372E8F002C6C41 /* gamepl_c.mm in Sources */,
 				4A3FB17313372E8F002C6C41 /* gamepl_d.cpp in Sources */,
 				4A3FB17413372E8F002C6C41 /* gamepl_u.cpp in Sources */,
 				4A3FB17513372E8F002C6C41 /* gameplay.cpp in Sources */,
@@ -1458,7 +1469,7 @@
 				4A3FB1F013372E8F002C6C41 /* help.cpp in Sources */,
 				4A3FB1F213372E8F002C6C41 /* io.cpp in Sources */,
 				4A3FB1F413372E8F002C6C41 /* language.cpp in Sources */,
-				4A3FB1F613372E8F002C6C41 /* lmain.cpp in Sources */,
+				4A3FB1F613372E8F002C6C41 /* lmain.mm in Sources */,
 				4A3FB1F813372E8F002C6C41 /* log.cpp in Sources */,
 				4A3FB1FD13372E8F002C6C41 /* user.cpp in Sources */,
 			);
@@ -1486,6 +1497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A42652A1366DAE50038EA73 /* LixMacManager.m in Sources */,
 				4AB137AD1345C74400898306 /* main.mm in Sources */,
 				4AABB78B132A4AB900A5A71B /* LixMacAppController.mm in Sources */,
 			);

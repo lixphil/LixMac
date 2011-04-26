@@ -6,18 +6,25 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-// TODO: Credits.rtf
-// TODO: devising a good method to quit Allegro
-// TODO: quit menu item and close window action
+// TODO: close window action
 
 #import "LixMacAppController.h"
 #import "LixMacMacros.h"
+#import "LixMacManager.h"
 
 @implementation NSObject (LixAdditions)
 
 -(IBAction)quitAllegro:(id)sender {
-	NSAlert* alert = [NSAlert alertWithMessageText:@"Are you sure you want to quit Lix?" defaultButton:@"Yes" alternateButton:@"No" otherButton:nil informativeTextWithFormat:@"Any unsaved progress will be lost."];
-	[alert beginSheetModalForWindow:allegroWindow modalDelegate:nil didEndSelector:nil contextInfo:nil];
+	[NSCursor unhide]; // Sometimes the cursor is still hidden
+	[[LixMacManager sharedManager] setQuitAlertOpen:YES];
+	NSAlert* alert = [NSAlert alertWithMessageText:@"Are you sure you want to quit Lix?" defaultButton:@"Quit" alternateButton:@"Cancel" otherButton:nil informativeTextWithFormat:@"Any unsaved progress will be lost."];
+	[alert beginSheetModalForWindow:allegroWindow modalDelegate:nil didEndSelector:@selector(quitAlertDidEnd:returnCode:contextInfo:) contextInfo:nil];
+}
+
+- (void) quitAlertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+	[[LixMacManager sharedManager] setQuitAlertOpen:NO];
+	if (returnCode == NSOKButton)
+		[[LixMacManager sharedManager] setWantToQuit:YES];
 }
 
 @end

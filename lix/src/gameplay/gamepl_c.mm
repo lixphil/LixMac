@@ -10,6 +10,11 @@
 #include "../api/manager.h"
 #include "../other/user.h"
 
+#ifdef ALLEGRO_MACOSX
+#include "LixMacManager.h"
+#include "LixMacMacros.h"
+#endif
+
 void Gameplay::calc()
 {
     // Wenn nicht gestartet, macht dies nix
@@ -21,7 +26,9 @@ void Gameplay::calc()
         // immediately again during a network game on an ESC press
         if (window_gameplay && Network::get_started()
          && !window_gameplay->get_game_end()) calc_self();
-    }
+    } else if (([[LixMacManager sharedManager] quitAlertOpen] || ![allegroWindow isKeyWindow]) && !Network::get_started()) { // TODO: Check to make sure that it doesn't pause in a network game
+		// Do nothing
+	}
     else calc_self();
 }
 
@@ -144,7 +151,7 @@ void Gameplay::calc_self()
         }
 
         // Pause
-        if (pan.get_mode_single() && pan.pause.get_clicked()) {
+        if (pan.get_mode_single() && pan.pause.get_clicked() || [[LixMacManager sharedManager] quitAlertOpen]) {
             pan.pause.set_on(!pan.pause.get_on());
         }
         // Zoom

@@ -43,9 +43,9 @@
 #include "../lix/lix_enum.h" // initialize the strings in there
 
 #ifdef ALLEGRO_MACOSX
-	#include <Cocoa/Cocoa.h>
-	#include "LixMacMacros.h"
-	#include "LixMacAppController.h"
+#include <Cocoa/Cocoa.h>
+#include "LixMacMacros.h"
+#include "LixMacAppController.h"
 #endif
 
 int main(int argc, char* argv[])
@@ -74,8 +74,11 @@ int main(int argc, char* argv[])
 	
 	#ifdef ALLEGRO_MACOSX
 		// The instance of AllegroWindow is setup from this point. We can access it via [NSApp mainWindow] (see LixMacMacros.h)
+		// But I'm going to put the window's view into my own window, so I have more control over it.
+		// Then I'll release the AllegroWindow.
 		//LixMacAppController* app = [[LixMacAppController alloc] init];
-		//[allegroWindow setDelegate:app];
+	
+		
 	#endif
 	
     load_all_bitmaps();
@@ -83,6 +86,10 @@ int main(int argc, char* argv[])
 
     // Main loop. See other/lmain.cpp for this.
     LMain* l_main = new LMain;
+	
+	// We need to expose LMain so the Cocoa interface can access it - phil
+	
+	
     l_main->main_loop();
     delete l_main;
 
@@ -95,10 +102,7 @@ int main(int argc, char* argv[])
     destroy_all_bitmaps();
     Log::deinitialize();
     Globals::deinitialize();
-
-	#ifdef ALLEGRO_MACOSX
-		//[app release];
-	#endif
+	
     // don't call allegro_exit(), doing that causes the program
     // to not terminate in rare cases
     return 0;

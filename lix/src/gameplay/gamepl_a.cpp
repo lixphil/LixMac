@@ -126,8 +126,9 @@ void Gameplay::calc_active()
         // Auswertung von target
         // Wir kontrollieren auch die angezeigte Zahl, siehe Kommentar zur
         // sichtbaren Zahl wegen Schokolade fuer's Auge
-        if (target != trlo->lixvec.end() && hardware.get_ml()
-         && pan.skill[skill_visible].get_number() != 0) {
+        if (target != trlo->lixvec.end() 
+			&& hardware.get_ml()
+			&& pan.skill[skill_visible].get_number() != 0) {
             const int lem_id = target - trlo->lixvec.begin();
             pan.pause.set_off();
 

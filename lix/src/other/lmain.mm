@@ -9,6 +9,10 @@
 #include "../api/manager.h"
 #include "../graphic/sound.h"
 
+#ifdef ALLEGRO_MACOSX
+#include "LixMacManager.h"
+#endif
+
 LMain::LMain()
 :
     exit    (false),
@@ -152,7 +156,7 @@ void LMain::calc()
 
     // Hotkey combination to terminate the program instantly from
     // everywhere. This doesn't bug the user about unsaved data.
-    if (key[KEY_ESC] && key[KEY_LSHIFT]) {
+    if (key[KEY_ESC] && key[KEY_LSHIFT] || [[LixMacManager sharedManager] wantToQuit]) {
         exit = true;
     }
     // Hotkey combination for fullscreen

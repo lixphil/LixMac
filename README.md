@@ -54,7 +54,7 @@ Change the target to "LixServer". (or lixserv if you only want the server execut
 
 There are lots of things which are incomplete and/or buggy. In the Xcode project, do a project find for "TODO". 
 
-To contact me, my email address is in my GitHub profile.
+To contact me about any suggestions or bug reports you might have, my email address is in my GitHub profile. :)
 
 
 Have fun!
