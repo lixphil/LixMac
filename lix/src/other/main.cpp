@@ -42,12 +42,6 @@
 
 #include "../lix/lix_enum.h" // initialize the strings in there
 
-#ifdef ALLEGRO_MACOSX
-#include <Cocoa/Cocoa.h>
-#include "LixMacMacros.h"
-#include "LixMacAppController.h"
-#endif
-
 int main(int argc, char* argv[])
 {
     allegro_init();
@@ -72,23 +66,11 @@ int main(int argc, char* argv[])
     set_screen_mode(0, margs.scr_x, margs.scr_y); // in glob_gfx.h
     set_window_title(Language::main_name_of_the_game.c_str());
 	
-	#ifdef ALLEGRO_MACOSX
-		// The instance of AllegroWindow is setup from this point. We can access it via [NSApp mainWindow] (see LixMacMacros.h)
-		// But I'm going to put the window's view into my own window, so I have more control over it.
-		// Then I'll release the AllegroWindow.
-		//LixMacAppController* app = [[LixMacAppController alloc] init];
-	
-		
-	#endif
-	
     load_all_bitmaps();
     Network::initialize();
 
     // Main loop. See other/lmain.cpp for this.
     LMain* l_main = new LMain;
-	
-	// We need to expose LMain so the Cocoa interface can access it - phil
-	
 	
     l_main->main_loop();
     delete l_main;

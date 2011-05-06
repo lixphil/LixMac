@@ -6,6 +6,21 @@
 	objectVersion = 42;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		4A951A6B136C0027000CA604 /* Install LixMac to ~/Applications */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4A951A72136C0058000CA604 /* Build configuration list for PBXAggregateTarget "Install LixMac to ~/Applications" */;
+			buildPhases = (
+				4A951A6A136C0027000CA604 /* CopyFiles */,
+				4A952022136C0469000CA604 /* Reveal in Finder */,
+			);
+			dependencies = (
+			);
+			name = "Install LixMac to ~/Applications";
+			productName = "Install LixMac to ~/Applications";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		4A107F5713449040000913DF /* LixCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A3FB0BD1337258A002C6C41 /* LixCore.framework */; };
 		4A242ED2131D0CD800D6C047 /* bitmap in Resources */ = {isa = PBXBuildFile; fileRef = 4A2429FC131D0CD700D6C047 /* bitmap */; };
@@ -222,7 +237,6 @@
 		4A3FB21613372FC2002C6C41 /* LixCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3FB0BD1337258A002C6C41 /* LixCore.framework */; };
 		4A3FB21F133730D9002C6C41 /* LixCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3FB0BD1337258A002C6C41 /* LixCore.framework */; };
 		4A4264D61366D6E60038EA73 /* LixMacManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4264A21366D4970038EA73 /* LixMacManager.m */; };
-		4A42652A1366DAE50038EA73 /* LixMacManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4264A21366D4970038EA73 /* LixMacManager.m */; };
 		4A4265E11366EE910038EA73 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4A4265E01366EE910038EA73 /* Credits.rtf */; };
 		4A524A7B132F67A500633A0E /* s_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A5249E3132F66BA00633A0E /* s_main.cpp */; };
 		4A524B1A132F6AE500633A0E /* LixServAppController.h in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB757132A47F900A5A71B /* LixServAppController.h */; };
@@ -248,10 +262,11 @@
 		4A6CC629136599D700A48E21 /* liballeg.4.4.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */; };
 		4A6CC63313659A7100A48E21 /* liballeg-main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6CC5B9136591AC00A48E21 /* liballeg-main.a */; };
 		4A6CC6561365AB5800A48E21 /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4A6CC6551365AB5800A48E21 /* ReadMe.rtf */; };
+		4A951A6D136C0053000CA604 /* Lix.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 846C14D30B1F65CE0012B69D /* Lix.app */; };
 		4A9D06E71329ED5700BFFD95 /* lixIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4A9D06E61329ED5700BFFD95 /* lixIcon.icns */; };
 		4AABB4D8132A3EF000A5A71B /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4A8D0CAD1325FF3800B09851 /* MainMenu.nib */; };
-		4AABB78B132A4AB900A5A71B /* LixMacAppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB40F132A3CF800A5A71B /* LixMacAppController.mm */; };
-		4AB137AD1345C74400898306 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB388132A3CDD00A5A71B /* main.mm */; };
+		4AABB78B132A4AB900A5A71B /* LixMacAdditions.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB40F132A3CF800A5A71B /* LixMacAdditions.mm */; };
+		4AB137AD1345C74400898306 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB388132A3CDD00A5A71B /* main.cpp */; };
 		4ACAAAC5136552670040D075 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF37478131E535B00157DB3 /* Cocoa.framework */; };
 		4AD537541330C79A003E4EC3 /* lixserv in Resources */ = {isa = PBXBuildFile; fileRef = 4A5249FD132F676800633A0E /* lixserv */; };
 		4AD537B61330CF50003E4EC3 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4AD537B51330CF50003E4EC3 /* Credits.rtf */; };
@@ -312,6 +327,16 @@
 			dstSubfolderSpec = 16;
 			files = (
 				4A6CC629136599D700A48E21 /* liballeg.4.4.1.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A951A6A136C0027000CA604 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "~/Applications/Lix (Debug)";
+			dstSubfolderSpec = 0;
+			files = (
+				4A951A6D136C0053000CA604 /* Lix.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,13 +579,13 @@
 		4AABB385132A3CDD00A5A71B /* lmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lmain.h; sourceTree = "<group>"; };
 		4AABB386132A3CDD00A5A71B /* log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = log.cpp; sourceTree = "<group>"; };
 		4AABB387132A3CDD00A5A71B /* log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
-		4AABB388132A3CDD00A5A71B /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		4AABB388132A3CDD00A5A71B /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4AABB389132A3CDD00A5A71B /* myalleg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myalleg.h; sourceTree = "<group>"; };
 		4AABB38A132A3CDD00A5A71B /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
 		4AABB38B132A3CDD00A5A71B /* user.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = user.cpp; sourceTree = "<group>"; };
 		4AABB38C132A3CDD00A5A71B /* user.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = user.h; sourceTree = "<group>"; };
-		4AABB40E132A3CF800A5A71B /* LixMacAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LixMacAppController.h; path = source/client/LixMacAppController.h; sourceTree = "<group>"; };
-		4AABB40F132A3CF800A5A71B /* LixMacAppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LixMacAppController.mm; path = source/client/LixMacAppController.mm; sourceTree = "<group>"; };
+		4AABB40E132A3CF800A5A71B /* LixMacAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LixMacAdditions.h; path = source/client/LixMacAdditions.h; sourceTree = "<group>"; };
+		4AABB40F132A3CF800A5A71B /* LixMacAdditions.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LixMacAdditions.mm; path = source/client/LixMacAdditions.mm; sourceTree = "<group>"; };
 		4AABB410132A3CF800A5A71B /* LixMacMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LixMacMacros.h; path = source/LixMacMacros.h; sourceTree = "<group>"; };
 		4AABB561132A40C300A5A71B /* LixServer.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = LixServer.nib; path = server/LixServer.nib; sourceTree = "<group>"; };
 		4AABB757132A47F900A5A71B /* LixServAppController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = LixServAppController.h; path = source/server/LixServAppController.h; sourceTree = "<group>"; };
@@ -1006,7 +1031,7 @@
 				4AABB385132A3CDD00A5A71B /* lmain.h */,
 				4AABB386132A3CDD00A5A71B /* log.cpp */,
 				4AABB387132A3CDD00A5A71B /* log.h */,
-				4AABB388132A3CDD00A5A71B /* main.mm */,
+				4AABB388132A3CDD00A5A71B /* main.cpp */,
 				4AABB389132A3CDD00A5A71B /* myalleg.h */,
 				4AABB38A132A3CDD00A5A71B /* types.h */,
 				4AABB38B132A3CDD00A5A71B /* user.cpp */,
@@ -1026,8 +1051,8 @@
 		4AABB75A132A481000A5A71B /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				4AABB40E132A3CF800A5A71B /* LixMacAppController.h */,
-				4AABB40F132A3CF800A5A71B /* LixMacAppController.mm */,
+				4AABB40E132A3CF800A5A71B /* LixMacAdditions.h */,
+				4AABB40F132A3CF800A5A71B /* LixMacAdditions.mm */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -1246,6 +1271,7 @@
 				4A5249FC132F676800633A0E /* lixserv */,
 				4A524B16132F6ACE00633A0E /* LixServer */,
 				4A3FB0BC1337258A002C6C41 /* LixCore */,
+				4A951A6B136C0027000CA604 /* Install LixMac to ~/Applications */,
 			);
 		};
 /* End PBXProject section */
@@ -1331,6 +1357,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# We'll want to change the search path for lixserv, as this meant to be a more user-friendly version of the server.\ncd \"$BUILD_DIR/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/$PRODUCT_NAME.app/Contents/MacOS\"\ninstall_name_tool -change liballeg.4.4.dylib @executable_path/../Frameworks/liballeg.4.4.1.dylib lixserv";
+		};
+		4A952022136C0469000CA604 /* Reveal in Finder */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Reveal in Finder";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "open ~/Applications/Lix\\ \\(Debug\\)";
 		};
 		4AD537891330CACF003E4EC3 /* Move lixserv and library into bundle */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1497,9 +1537,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A42652A1366DAE50038EA73 /* LixMacManager.m in Sources */,
-				4AB137AD1345C74400898306 /* main.mm in Sources */,
-				4AABB78B132A4AB900A5A71B /* LixMacAppController.mm in Sources */,
+				4AB137AD1345C74400898306 /* main.cpp in Sources */,
+				4AABB78B132A4AB900A5A71B /* LixMacAdditions.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1594,6 +1633,16 @@
 			};
 			name = Debug;
 		};
+		4A951A6C136C0027000CA604 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Install LixMac to ~/Applications";
+			};
+			name = Debug;
+		};
 		846C14C20B1F65C30012B69D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1661,6 +1710,14 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A524B19132F6ACE00633A0E /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4A951A72136C0058000CA604 /* Build configuration list for PBXAggregateTarget "Install LixMac to ~/Applications" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A951A6C136C0027000CA604 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

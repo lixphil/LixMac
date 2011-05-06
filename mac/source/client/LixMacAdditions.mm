@@ -8,7 +8,7 @@
 
 // TODO: close window action
 
-#import "LixMacAppController.h"
+#import "LixMacAdditions.h"
 #import "LixMacMacros.h"
 #import "LixMacManager.h"
 
