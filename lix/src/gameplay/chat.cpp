@@ -51,6 +51,7 @@ void GameplayChat::type_on_enter_callback(void* chat_instance)
     if (!ch.type.get_text().empty()) {
         Network::send_chat_message(ch.type.get_text());
         ch.type.set_text();
+		ch.type.set_invisible();
     }
 }
 
@@ -72,7 +73,7 @@ void GameplayChat::calc_self()
 
     const std::list <Console::Line>& li = Console::get_lines_recent();
     size_t nr = 0;
-
+	
     for (Console::LiIt i = li.begin(); i != li.end(); ++i) {
         msgs[nr].set_text(i->text);
         msgs[nr].set_color(i->white ? color[COL_WHITE] : color[COL_TEXT]);
@@ -85,8 +86,10 @@ void GameplayChat::calc_self()
     }
     type.set_hidden(!type.get_on());
     name.set_hidden(!type.get_on());
-    if (type_on_last_frame > 0) --type_on_last_frame;
-    if (type.get_on()) type_on_last_frame = 2;
+    if (type_on_last_frame > 0) 
+		--type_on_last_frame;
+    if (type.get_on()) 
+		type_on_last_frame = 2;
 
     set_draw_required();
 }

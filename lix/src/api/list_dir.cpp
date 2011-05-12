@@ -74,9 +74,13 @@ void DirList::load_current_dir() {
     } else {
         real_buttons_per_page = bottom_button;
     }
-
-    Help::find_dirs(current_dir, static_put_to_dir_list, (void*) this);
-    std::sort(dir_list.begin(), dir_list.end());
+	in_game_dir = true;
+	
+	// Check if we're in the Game or User dir
+	if (in_game_dir) {
+		Help::find_dirs(current_dir, static_put_to_dir_list, (void*) this);
+    }
+		std::sort(dir_list.begin(), dir_list.end());
 
     // Hochwechsler
     if (current_dir.size() > base_dir.size()) {
@@ -89,8 +93,10 @@ void DirList::load_current_dir() {
     // mit Eintraegen der vorletzten Seite aufgefuellt.
     while (page > 0 && next_from_dir_list + real_buttons_per_page
            > dir_list.size()) --next_from_dir_list;
+	
     for (unsigned int i = buttons.size();
-     i < bottom_button && next_from_dir_list < dir_list.size(); ++i) {
+     i < bottom_button && next_from_dir_list < dir_list.size(); ++i) 
+	{
         std::string s = dir_list[next_from_dir_list];
         ++next_from_dir_list;
         if (s[s.size()-1] == '/') s.resize(s.size()-1);

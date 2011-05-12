@@ -315,7 +315,7 @@ void find_dirs(std::string where, DoStr dostr, void* from)
                 std::string s = where;
                 s.resize(s.size() -1 ); // * von der Maske abschnibbeln
                 s += info.name;
-                s += '/';
+				s += '/';
                 dostr(s, from);
             }
         } while (al_findnext(&info) == 0);

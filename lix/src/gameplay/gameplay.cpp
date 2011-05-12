@@ -36,7 +36,7 @@ Gameplay::Gameplay(Replay* rep)
     // Variables
     exit                   (false),
     filename               (determine_filename(rep)),
-    level                  (Network::get_started()
+    level                  (0 //Network::get_started()
                             ? Network::get_level() : filename),
     player_local           (0), // will be assigned in prepare_players
     trlo                   (0), // same

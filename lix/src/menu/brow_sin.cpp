@@ -23,11 +23,11 @@ SingleBrowser::SingleBrowser()
     info_initial (but_x, 260, but_xl),
     info_required(but_x, 280, but_xl),
     info_clock   (but_x, 300, but_xl),
-    rec_saved    (but_x, 340, but_xl),
-    rec_skills   (but_x, 360, but_xl),
-    rec_updates  (but_x, 380, but_xl),
-    rec_altered_1(but_x, 360, Language::browser_info_result_old_1),
-    rec_altered_2(but_x, 380, Language::browser_info_result_old_2)
+    rec_saved    (but_x, 320, but_xl),
+    rec_skills   (but_x, 340, but_xl),
+    rec_updates  (but_x, 360, but_xl),
+    rec_altered_1(but_x, 380, Language::browser_info_result_old_1),
+    rec_altered_2(but_x, 400, Language::browser_info_result_old_2)
 {
     add_child(button_edit);
     add_child(info_initial);

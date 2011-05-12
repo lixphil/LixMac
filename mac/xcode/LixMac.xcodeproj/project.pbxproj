@@ -364,12 +364,12 @@
 		4A3620B01363D25C0037061F /* LixServer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "LixServer-Info.plist"; path = "../info/LixServer-Info.plist"; sourceTree = "<group>"; };
 		4A3FB0BD1337258A002C6C41 /* LixCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LixCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A3FB0BE1337258A002C6C41 /* LixCore-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "LixCore-Info.plist"; path = "../info/LixCore-Info.plist"; sourceTree = "<group>"; };
-		4A4264A11366D4970038EA73 /* LixMacManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LixMacManager.h; sourceTree = "<group>"; };
-		4A4264A21366D4970038EA73 /* LixMacManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LixMacManager.m; sourceTree = "<group>"; };
+		4A4264A11366D4970038EA73 /* LixMacManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LixMacManager.h; path = src/shared/LixMacManager.h; sourceTree = "<group>"; };
+		4A4264A21366D4970038EA73 /* LixMacManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LixMacManager.m; path = src/shared/LixMacManager.m; sourceTree = "<group>"; };
 		4A4265E01366EE910038EA73 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Credits.rtf; path = client/Credits.rtf; sourceTree = "<group>"; };
 		4A5249E3132F66BA00633A0E /* s_main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = s_main.cpp; sourceTree = "<group>"; };
 		4A5249FD132F676800633A0E /* lixserv */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lixserv; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A524B0A132F6A4400633A0E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = source/server/main.m; sourceTree = "<group>"; };
+		4A524B0A132F6A4400633A0E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = src/server/main.m; sourceTree = "<group>"; };
 		4A524B17132F6ACE00633A0E /* LixServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LixServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5FE3F213655F84006350A3 /* libenet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libenet.a; path = /usr/local/lib/libenet.a; sourceTree = "<absolute>"; };
 		4A6CC5B9136591AC00A48E21 /* liballeg-main.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballeg-main.a"; path = "/usr/local/lib/liballeg-main.a"; sourceTree = "<absolute>"; };
@@ -584,12 +584,12 @@
 		4AABB38A132A3CDD00A5A71B /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
 		4AABB38B132A3CDD00A5A71B /* user.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = user.cpp; sourceTree = "<group>"; };
 		4AABB38C132A3CDD00A5A71B /* user.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = user.h; sourceTree = "<group>"; };
-		4AABB40E132A3CF800A5A71B /* LixMacAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LixMacAdditions.h; path = source/client/LixMacAdditions.h; sourceTree = "<group>"; };
-		4AABB40F132A3CF800A5A71B /* LixMacAdditions.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LixMacAdditions.mm; path = source/client/LixMacAdditions.mm; sourceTree = "<group>"; };
-		4AABB410132A3CF800A5A71B /* LixMacMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LixMacMacros.h; path = source/LixMacMacros.h; sourceTree = "<group>"; };
-		4AABB561132A40C300A5A71B /* LixServer.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = LixServer.nib; path = server/LixServer.nib; sourceTree = "<group>"; };
-		4AABB757132A47F900A5A71B /* LixServAppController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = LixServAppController.h; path = source/server/LixServAppController.h; sourceTree = "<group>"; };
-		4AABB758132A47F900A5A71B /* LixServAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LixServAppController.m; path = source/server/LixServAppController.m; sourceTree = "<group>"; };
+		4AABB40E132A3CF800A5A71B /* LixMacAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LixMacAdditions.h; path = src/client/LixMacAdditions.h; sourceTree = "<group>"; };
+		4AABB40F132A3CF800A5A71B /* LixMacAdditions.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LixMacAdditions.mm; path = src/client/LixMacAdditions.mm; sourceTree = "<group>"; };
+		4AABB410132A3CF800A5A71B /* LixMacMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LixMacMacros.h; path = src/shared/LixMacMacros.h; sourceTree = "<group>"; };
+		4AABB561132A40C300A5A71B /* LixServer.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = LixServer.nib; path = ../res/server/LixServer.nib; sourceTree = "<group>"; };
+		4AABB757132A47F900A5A71B /* LixServAppController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = LixServAppController.h; path = src/server/LixServAppController.h; sourceTree = "<group>"; };
+		4AABB758132A47F900A5A71B /* LixServAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LixServAppController.m; path = src/server/LixServAppController.m; sourceTree = "<group>"; };
 		4AD537B51330CF50003E4EC3 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Credits.rtf; path = server/Credits.rtf; sourceTree = "<group>"; };
 		4AF37478131E535B00157DB3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		846C14D30B1F65CE0012B69D /* Lix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lix.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -658,7 +658,7 @@
 				4A6CC6551365AB5800A48E21 /* ReadMe.rtf */,
 				29B97315FDCFA39411CA2CEA /* Lix Core */,
 				4A8D0CE4132603DD00B09851 /* Mac Extras */,
-				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97317FDCFA39411CA2CEA /* res */,
 				29B97323FDCFA39411CA2CEA /* Libraries & Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -683,7 +683,7 @@
 			path = ../../lix/src;
 			sourceTree = "<group>";
 		};
-		29B97317FDCFA39411CA2CEA /* Resources */ = {
+		29B97317FDCFA39411CA2CEA /* res */ = {
 			isa = PBXGroup;
 			children = (
 				4A3622531363D2D30037061F /* Nibs */,
@@ -691,8 +691,8 @@
 				4A3622551363D2EA0037061F /* Icons */,
 				4A3622561363D2F40037061F /* Game Data */,
 			);
-			name = Resources;
-			path = ../resources;
+			name = res;
+			path = ../res;
 			sourceTree = "<group>";
 		};
 		29B97323FDCFA39411CA2CEA /* Libraries & Frameworks */ = {
@@ -714,6 +714,7 @@
 				4A8D0CAD1325FF3800B09851 /* MainMenu.nib */,
 			);
 			name = Nibs;
+			path = ../res;
 			sourceTree = "<group>";
 		};
 		4A3622541363D2DE0037061F /* Info */ = {
