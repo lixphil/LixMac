@@ -610,8 +610,14 @@ void Language::set(const Language lang)
         option_scroll_torus_always    = "Always";
         option_multiple_builders      = "Builders: mult. clicks";
         option_screen_windowed        = "Windowed mode*";
-        option_screen_resolution      = "Fullscreen resol.**";
-        option_screen_windowed_res    = "Windowed resolution";
+        // TODO: remove this later
+        #ifdef ALLEGRO_MACOSX
+            option_screen_resolution  = "(not functional)";
+            option_screen_windowed_res= "(not functional)";
+        #else
+            option_screen_resolution  = "Fullscreen resol.**";
+            option_screen_windowed_res= "Windowed resolution";
+        #endif
         option_screen_scaling         = "Screen scaling";
         option_screen_scaling_stretch = "Stretched";
         option_screen_scaling_aspect  = "Aspect ratio";
@@ -627,10 +633,20 @@ void Language::set(const Language lang)
         option_debris_type            = "Debris type";
         option_debris_type_stars      = "Stars, clouds";
         option_debris_type_pixels     = "Pixels";
-        option_info                   = "*) Hit [Alt] + [Enter] to toggle full"
+        #ifdef ALLEGRO_MACOSX
+            option_info               = "*) Hit Command-Shift-F to toggle full"  
+        #else
+            option_info               = "*) Hit [Alt] + [Enter] to toggle full"
+        #endif
                                         "screen/windowed mode at any time.";
-        option_gfx_zero               = "**) Enter 0 in both fields to use "
-                                        "your normal desktop resolution.";
+        #ifdef ALLEGRO_MACOSX
+            option_gfx_zero           = "Temporary: Both window/fullscreen "
+                                        "resolution textfields are not functional.";
+        #else
+            option_gfx_zero           = "**) Enter 0 in both fields to use "
+            "your normal desktop resolution.";
+        #endif
+            
         option_sound_load_driver      = "Load sound driver*";
         option_sound_volume           = "Sound volume";
         option_info_sound             = "*) This option requires a program "

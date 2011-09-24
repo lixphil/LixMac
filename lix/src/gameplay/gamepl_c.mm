@@ -11,8 +11,8 @@
 #include "../other/user.h"
 
 #ifdef ALLEGRO_MACOSX
-#include "LixMacManager.h"
-#include "LixMacMacros.h"
+    #include "LixMacManager.h"
+    #include "LixMacMacros.h"
 #endif
 
 void Gameplay::calc()

@@ -49,3 +49,6 @@ public:
     void main_loop();
 
 };
+
+// TODO: Simon will be implementing an official close handler - update my code to use his handler when the time comes - phil
+void close_button_handler(void);

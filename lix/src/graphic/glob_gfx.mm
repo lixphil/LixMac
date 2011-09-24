@@ -157,8 +157,19 @@ void set_screen_mode(const bool full, int res_x, int res_y)
     #ifdef ALLEGRO_MACOSX
         res_x = 640;
         res_y = 480;
+        // TODO: look here
     #endif
+    
     int mode = full ? GFX_AUTODETECT_FULLSCREEN : GFX_AUTODETECT_WINDOWED;
+    #ifdef ALLEGRO_MACOSX
+        // This is so we can know how to handle mouse/keyboard input in fullscreen - phil
+        if (mode == 1) {
+            [[LixMacManager sharedManager] setIsFullscreen:YES];
+        } else if (mode == 2) {
+            [[LixMacManager sharedManager] setIsFullscreen:NO];
+        }
+    #endif
+    
     if (res_x == 0 || res_y == 0) {
         if (full) {
             res_x = gloB->screen_resolution_x;
@@ -182,13 +193,6 @@ void set_screen_mode(const bool full, int res_x, int res_y)
 
     clear_screen_at_next_blit = true;
     gloB->screen_fullscreen_now = (mode == GFX_AUTODETECT_FULLSCREEN);
-    
-    #ifdef ALLEGRO_MACOSX
-    if (gloB->screen_fullscreen_now)
-            // This is so we can know how to display the Quit alert, because
-            // Allegro wants to use the older Carbon method of going fullscreen
-            [LixMacManager sharedManager].isFullscreen = YES;
-    #endif
     
     // Do this so the mouse doesn't scroll stupidly after a switch.
     // In hardware.cpp, the mouse is always set to the center anyway, to trap

@@ -1,6 +1,6 @@
 /*
  * hardware.mm
- * My version only available in the Mac branch, some ObjC Cocoa code is needed for mouse input - phil
+ * 
  */
 
 #include "hardware.h"
@@ -9,14 +9,8 @@
 #include "user.h"
 
 #ifdef ALLEGRO_MACOSX
-
-	// Additions in hardware.mm
-	#include <Cocoa/Cocoa.h> // for mouse position
-	#include "LixMacMacros.h" // for easy reference to allegro window
-	#include "glob_gfx.h" // for screen size
-
+	#import "LixMacManager.h"
 #endif
-
 
 const unsigned int Hardware::doubleclick_speed(Help::timer_ticks_per_second/3);
 const unsigned int Hardware::doubleclick_for60(20);
@@ -42,7 +36,7 @@ Hardware::Hardware()
 Hardware::~Hardware() {}
 
 
-
+// TODO: fix keyboard input in fullscreen not working after clicking on quit alert/pressing combination with command key/more...?
 void Hardware::main_loop() {
 
     //////////
@@ -50,27 +44,10 @@ void Hardware::main_loop() {
     //////////
     
 	#ifdef ALLEGRO_MACOSX
-		// TODO: If we've lost focus from the window, don't bother updating the mouse position
-		// NOTE: This commented check below interferes with fullscreen
-		if ([allegroWindow isKeyWindow]) {
-			NSPoint mouse_loc = [NSEvent mouseLocation];
-			NSRect screen_frame = [[NSScreen mainScreen] frame];
-			NSRect game_window_frame = [allegroWindow frame]; // Get the position of the window
-			// These coordinates seem to be dead accurate
-			mouse_loc.x -= game_window_frame.origin.x + 1;
-			mouse_loc.y = (game_window_frame.origin.y - mouse_loc.y) + game_window_frame.size.height - 24;
-			
-			if (mouse_loc.x < 0 || mouse_loc.x > LEMSCR_X || mouse_loc.y < 0 || mouse_loc.y > LEMSCR_Y) {
-				if (mouse_hidden)  { [NSCursor unhide]; mouse_hidden = false; }
-			} else {
-				if (!mouse_hidden) { [NSCursor hide]; mouse_hidden = true; }
-			}
-			mouse_own_x = mouse_loc.x;
-			mouse_own_y = mouse_loc.y;
-		} else {
-			mouse_own_x = LEMSCR_X / 2;
-			mouse_own_y = LEMSCR_Y / 2;
-		}
+		// get the mouse position from LixMacManager
+        NSPoint mouse_loc = [[LixMacManager sharedManager] mouseLocationFromGameWindowSizeOfX:LEMSCR_X andY:LEMSCR_Y];
+        mouse_own_x = mouse_loc.x;
+        mouse_own_y = mouse_loc.y;
 	#else
 		mickey_x = mouse_x - LEMSCR_X/2;
 		mickey_y = mouse_y - LEMSCR_Y/2;
@@ -78,7 +55,7 @@ void Hardware::main_loop() {
 			mickey_x = mickey_x * (int) useR->mouse_speed / 20;
 			mickey_y = mickey_y * (int) useR->mouse_speed / 20;
 		}
-	
+	 
 		if (mickey_x || mickey_y) position_mouse(LEMSCR_X/2, LEMSCR_Y/2);
 		mouse_own_x += mickey_x;
 		mouse_own_y += mickey_y;
@@ -137,8 +114,6 @@ void Hardware::poll_mouse(const bool actual_tick)
     // Dies immer tun, egal ob ein Tick ansteht oder nicht]
 	#ifdef ALLEGRO_MACOSX
 		// TODO: Pre-Snow Leopard mouse handling
-		//if ([NSEvent 
-	
 		// Snow Leopard
 		if ([NSEvent pressedMouseButtons] == 1 << 0) mouse_buffer[0] = true; else mouse_buffer[0] = false;
 		if ([NSEvent pressedMouseButtons] == 1 << 1) mouse_buffer[1] = true; else mouse_buffer[1] = false;

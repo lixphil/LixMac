@@ -63,10 +63,7 @@ private:
 
     bool     mouse_buffer [3]; // Klicks zwischen den Ticks? (intern)
     unsigned mouse_since  [3]; // Wie lange seit letztem Klick (intern)
-
-	#ifdef ALLEGRO_MACOSX
-		bool mouse_hidden;
-	#endif
+    
 public:
 
     // Fuer Polling-Komponenten

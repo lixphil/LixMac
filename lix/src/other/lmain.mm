@@ -10,8 +10,15 @@
 #include "../graphic/sound.h"
 
 #ifdef ALLEGRO_MACOSX
-#include "LixMacManager.h"
+    #include "LixMacManager.h"
+    #include "LixMacMacros.h"
 #endif
+
+// TODO: Simon will be implementing an official close handler - update my code to use his handler when the time comes - phil
+void close_button_handler(void) {
+    [[LixMacManager sharedManager] beginQuitAlert];
+}
+END_OF_FUNCTION(close_button_handler);
 
 LMain::LMain()
 :
@@ -27,6 +34,10 @@ LMain::LMain()
     editor  (0),
     gameplay(0)
 {
+    #ifdef ALLEGRO_MACOSX
+        // Allegro has initialized by this stage, so it's safe to replace the window delegate
+        [[LixMacManager sharedManager] replaceAllegroWindowDelegate];
+    #endif
 }
 
 LMain::~LMain()
@@ -156,19 +167,30 @@ void LMain::calc()
 
     // Hotkey combination to terminate the program instantly from
     // everywhere. This doesn't bug the user about unsaved data.
-    if (key[KEY_ESC] && key[KEY_LSHIFT] || [[LixMacManager sharedManager] wantToQuit]) {
+    if (key[KEY_ESC] && key[KEY_LSHIFT]) {
         exit = true;
     }
-    // Hotkey combination for fullscreen
-    // Do not use key_enter_once() here, this is the time we want it with alt
-    if (hardware.get_alt()
-     && (hardware.key_once(KEY_ENTER) || hardware.key_once(KEY_ENTER_PAD))) {
-        set_screen_mode(!gloB->screen_fullscreen_now);
-    }
-
+    
+    #ifdef ALLEGRO_MACOSX
+        if ([[LixMacManager sharedManager] wantToQuit])
+            exit = true;
+    #endif
+    
+    
+    
+    #ifdef ALLEGRO_MACOSX
+        // The variable below is set to YES via the Game menu item
+        if ([[LixMacManager sharedManager] shouldSwitchScreenMode]) {
+            [[LixMacManager sharedManager] setShouldSwitchScreenMode:NO];
+    #else
+        // Hotkey combination for fullscreen
+        // Do not use key_enter_once() here, this is the time we want it with alt
+        if (hardware.get_alt()
+            && (hardware.key_once(KEY_ENTER) || hardware.key_once(KEY_ENTER_PAD))) {
+    #endif
+            set_screen_mode(!gloB->screen_fullscreen_now);
+        }
 }
-
-
 
 void LMain::draw()
 {
