@@ -1,37 +1,36 @@
 # Lix (for Mac OS X)
-Mac OS X version & Cocoa server frontend by "lixphil"
+Mac OS X version & Cocoa server frontend by lixphil
 
-Game codebase by "SimonN"
+Game codebase by SimonN
 
 ### Introduction
 
-This is the Mac OS X fork for SimonN's game, Lix. It essentially contains an Xcode project with the appropriate configuration as well as some other Mac-specific resources and minor enhancements. It'll be a personal project, which, over time I'll gradually update.
+This is the Mac OS X fork for SimonN's game, Lix. It essentially contains an Xcode project with the appropriate configuration as well as some other Mac-specific resources and enhancements to make the game feel more at home for the Mac user. Over time I'll gradually make updates on the project and hopefully provide regular builds.
 
 The project contains four targets:
 
-* LixCore, a framework containing all of the core Lix code
+* LixCore, a framework containing all of the core Lix code with preprocessor directives stuck in the appropriate places to interface with the special Mac code
 * LixMac, an executable that is linked with LixCore and provides a few niceties exclusive to the Mac platform
 * lixserv, the command-line utility used to run a dedicated Lix server
 * LixServer, a simple GUI application to control the server. It lives in the menu bar, and provides control and statistics for the server. (it is a work-in-progress at the moment)
 
 
-### Compiling The Project
+### Compiling the project
 
 #### Requirements:
 
-To build Lix for Mac OS X, you'll need Apple's Developer Tools for Xcode and the tools needed to compile. The game will also require two additional libraries:
+To build Lix for Mac OS X, you'll need Apple's Developer Tools for Xcode. The game also requires two additional libraries:
 
 * enet 1.3 (1.3.1 will also work)
 * Allegro 4.4.1
 
-Note that the builds that I provide use Universal binaries of Allegro and enet. 
-For Allegro, I set the CFLAGS and LDFLAGS environment variables to -arch i386 -arch ppc before running ./configure.
-For enet, I had a bit more difficulty and had to individually compile separate libraries with the two different architectures, then merge the two into one using the lipo tool.
+Note that the builds that I provide use Universal binaries of Allegro and enet. To build these, for Allegro, I set the `CFLAGS` and `LDFLAGS` environment variables to `-arch i386 -arch ppc` before running `./configure`.
+For enet, I had a bit more difficulty and had to individually compile separate libraries with the two different architectures, then merge the two into one using the `lipo` tool.
 
 
 #### Building in Xcode:
 
-Firstly, open ./mac/xcode/LixMac.xcodeproj.
+Firstly, open `./mac/xcode/LixMac.xcodeproj`.
 
 ##### To build the game (client):
 
@@ -44,19 +43,22 @@ Change the target to "LixServer". (or lixserv if you only want the server execut
 ##### To build the server (with just the server binary):
 
 1. Change the target to "lixserv", and "Build and Run".
-2. Move ./mac/xcode/build/Debug/LixCore.framework to /Library/Frameworks.
-3. Make sure /usr/local/lib/liballeg.4.4.1.dylib exists.
+2. Move `./mac/xcode/build/Debug/LixCore.framework` to `/Library/Frameworks`.
+3. Make sure `/usr/local/lib/liballeg.4.4.1.dylib` exists.
 
 (note: this has not yet been tested, but it should work)
 
 
 #### Other Notes
 
-There are lots of things which are incomplete and/or buggy. In the Xcode project, do a project find for "TODO". 
+See the file ImportantNotes.rtf in ./mac/res/common for information on issues that are currently significant. Also for a todo list, in the Xcode project do a project find for "TODO".
 
-To contact me about any suggestions or bug reports you might have, my email address is in my GitHub profile. :)
+To contact me, my email address is:
+aborttrap@gmail.com
+
+I'm also on occasion at the official IRC channel (#lix at irc.quakenet.org), and sometimes I'll check Simon's forum (http://asdfasdf.ethz.ch/~simon/forum.php).
 
 
 Have fun!
 
-lixphil
+- phil
