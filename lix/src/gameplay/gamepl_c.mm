@@ -19,15 +19,18 @@ void Gameplay::calc()
 {
     // Wenn nicht gestartet, macht dies nix
     Network::calc();
-
+    
     if (window_gameplay) {
         calc_window();
         // This is a bit kludgy, but it prevents opening the window
         // immediately again during a network game on an ESC press
         if (window_gameplay && Network::get_started()
          && !window_gameplay->get_game_end()) calc_self();
-    } else if (([[LixMacManager sharedManager] quitAlertOpen] || ![allegroWindow isKeyWindow]) && !Network::get_started()) { // TODO: Check to make sure that it doesn't pause in a network game
+    } else if (((![[LixMacManager sharedManager] isFullscreen] && ![allegroWindow isKeyWindow])) || 
+               [[LixMacManager sharedManager] quitAlertOpen] &&
+                !Network::get_started()) { // TODO: Check to make sure that it doesn't pause in a network game
 		// Do nothing
+        
 	}
     else calc_self();
 }
