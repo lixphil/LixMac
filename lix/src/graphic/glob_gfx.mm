@@ -16,6 +16,11 @@
 #include "../other/log.h"
 #include "../other/user.h"
 
+#ifdef ALLEGRO_MACOSX
+    #import "LixMacMacros.h"
+    #import "LixMacManager.h"
+#endif
+
 Torbit *pre_screen;
 
 // Farben
@@ -148,6 +153,11 @@ void blit_to_screen(BITMAP* b)
 // Other globals are not changed.
 void set_screen_mode(const bool full, int res_x, int res_y)
 {
+    // TODO: fix issues with scaling and Cocoa mouse movement
+    #ifdef ALLEGRO_MACOSX
+        res_x = 640;
+        res_y = 480;
+    #endif
     int mode = full ? GFX_AUTODETECT_FULLSCREEN : GFX_AUTODETECT_WINDOWED;
     if (res_x == 0 || res_y == 0) {
         if (full) {
@@ -172,7 +182,14 @@ void set_screen_mode(const bool full, int res_x, int res_y)
 
     clear_screen_at_next_blit = true;
     gloB->screen_fullscreen_now = (mode == GFX_AUTODETECT_FULLSCREEN);
-
+    
+    #ifdef ALLEGRO_MACOSX
+    if (gloB->screen_fullscreen_now)
+            // This is so we can know how to display the Quit alert, because
+            // Allegro wants to use the older Carbon method of going fullscreen
+            [LixMacManager sharedManager].isFullscreen = YES;
+    #endif
+    
     // Do this so the mouse doesn't scroll stupidly after a switch.
     // In hardware.cpp, the mouse is always set to the center anyway, to trap
     // it in the program (scrolling at the sides) and for infinite movement

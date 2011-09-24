@@ -12,6 +12,7 @@
 
 @synthesize wantToQuit;
 @synthesize quitAlertOpen;
+@synthesize isFullscreen;
 
 // Below declares a singleton
 static LixMacManager *sharedManager = nil;

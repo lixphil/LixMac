@@ -12,10 +12,12 @@
 @interface LixMacManager : NSObject {
 	BOOL wantToQuit;
 	BOOL quitAlertOpen;
+    BOOL isFullscreen;
 }
 
 @property (assign, readwrite) BOOL wantToQuit;
 @property (assign, readwrite) BOOL quitAlertOpen;
+@property (assign, readwrite) BOOL isFullscreen;
 
 + (LixMacManager*) sharedManager; 
 
