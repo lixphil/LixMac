@@ -22,8 +22,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		4A08D3AC142DBF4D00B4343C /* ReleaseNotes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4A08D3AB142DBF4D00B4343C /* ReleaseNotes.rtf */; };
-		4A08D3AD142DBF4D00B4343C /* ReleaseNotes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4A08D3AB142DBF4D00B4343C /* ReleaseNotes.rtf */; };
+		4A08D40D142DCC8100B4343C /* LixWindowDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A08D3DC142DC73F00B4343C /* LixWindowDelegate.m */; };
+		4A08D4EB142DDC3600B4343C /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4A8D0CAD1325FF3800B09851 /* MainMenu.nib */; };
 		4A107F5713449040000913DF /* LixCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A3FB0BD1337258A002C6C41 /* LixCore.framework */; };
 		4A242ED2131D0CD800D6C047 /* bitmap in Resources */ = {isa = PBXBuildFile; fileRef = 4A2429FC131D0CD700D6C047 /* bitmap */; };
 		4A242ED3131D0CD800D6C047 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 4A242B11131D0CD700D6C047 /* data */; };
@@ -266,8 +266,6 @@
 		4A6CC6561365AB5800A48E21 /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4A6CC6551365AB5800A48E21 /* ReadMe.rtf */; };
 		4A951A6D136C0053000CA604 /* Lix.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 846C14D30B1F65CE0012B69D /* Lix.app */; };
 		4A9D06E71329ED5700BFFD95 /* lixIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4A9D06E61329ED5700BFFD95 /* lixIcon.icns */; };
-		4AABB4D8132A3EF000A5A71B /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4A8D0CAD1325FF3800B09851 /* MainMenu.nib */; };
-		4AABB78B132A4AB900A5A71B /* LixMacAdditions.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB40F132A3CF800A5A71B /* LixMacAdditions.mm */; };
 		4AB137AD1345C74400898306 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB388132A3CDD00A5A71B /* main.cpp */; };
 		4ACAAAC5136552670040D075 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF37478131E535B00157DB3 /* Cocoa.framework */; };
 		4AD537541330C79A003E4EC3 /* lixserv in Resources */ = {isa = PBXBuildFile; fileRef = 4A5249FD132F676800633A0E /* lixserv */; };
@@ -356,7 +354,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4A08D3AB142DBF4D00B4343C /* ReleaseNotes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ReleaseNotes.rtf; path = ../res/common/ReleaseNotes.rtf; sourceTree = SOURCE_ROOT; };
+		4A08D3DB142DC73F00B4343C /* LixWindowDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LixWindowDelegate.h; path = src/client/LixWindowDelegate.h; sourceTree = "<group>"; };
+		4A08D3DC142DC73F00B4343C /* LixWindowDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LixWindowDelegate.m; path = src/client/LixWindowDelegate.m; sourceTree = "<group>"; };
 		4A0CE1F3132C80B800081F62 /* lixServerIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = lixServerIcon.icns; path = server/lixServerIcon.icns; sourceTree = "<group>"; };
 		4A0CE1F7132C83E900081F62 /* lixServerMenuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lixServerMenuIcon.png; path = server/lixServerMenuIcon.png; sourceTree = "<group>"; };
 		4A0CE211132C87A100081F62 /* lixServerMenuIconDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lixServerMenuIconDown.png; path = server/lixServerMenuIconDown.png; sourceTree = "<group>"; };
@@ -587,8 +586,6 @@
 		4AABB38A132A3CDD00A5A71B /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
 		4AABB38B132A3CDD00A5A71B /* user.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = user.cpp; sourceTree = "<group>"; };
 		4AABB38C132A3CDD00A5A71B /* user.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = user.h; sourceTree = "<group>"; };
-		4AABB40E132A3CF800A5A71B /* LixMacAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LixMacAdditions.h; path = src/client/LixMacAdditions.h; sourceTree = "<group>"; };
-		4AABB40F132A3CF800A5A71B /* LixMacAdditions.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LixMacAdditions.mm; path = src/client/LixMacAdditions.mm; sourceTree = "<group>"; };
 		4AABB410132A3CF800A5A71B /* LixMacMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LixMacMacros.h; path = src/shared/LixMacMacros.h; sourceTree = "<group>"; };
 		4AABB561132A40C300A5A71B /* LixServer.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = LixServer.nib; path = ../res/server/LixServer.nib; sourceTree = "<group>"; };
 		4AABB757132A47F900A5A71B /* LixServAppController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = LixServAppController.h; path = src/server/LixServAppController.h; sourceTree = "<group>"; };
@@ -659,7 +656,6 @@
 			isa = PBXGroup;
 			children = (
 				4A6CC6551365AB5800A48E21 /* ReadMe.rtf */,
-				4A08D3AB142DBF4D00B4343C /* ReleaseNotes.rtf */,
 				29B97315FDCFA39411CA2CEA /* Lix Core */,
 				4A8D0CE4132603DD00B09851 /* Mac Extras */,
 				29B97317FDCFA39411CA2CEA /* res */,
@@ -758,10 +754,7 @@
 			isa = PBXGroup;
 			children = (
 				4AABB75A132A481000A5A71B /* Game */,
-				4AABB410132A3CF800A5A71B /* LixMacMacros.h */,
 				4AABB75B132A481500A5A71B /* Server */,
-				4A4264A11366D4970038EA73 /* LixMacManager.h */,
-				4A4264A21366D4970038EA73 /* LixMacManager.m */,
 			);
 			name = "Mac Extras";
 			path = ..;
@@ -1056,8 +1049,11 @@
 		4AABB75A132A481000A5A71B /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				4AABB40E132A3CF800A5A71B /* LixMacAdditions.h */,
-				4AABB40F132A3CF800A5A71B /* LixMacAdditions.mm */,
+				4A08D3DB142DC73F00B4343C /* LixWindowDelegate.h */,
+				4A08D3DC142DC73F00B4343C /* LixWindowDelegate.m */,
+				4A4264A11366D4970038EA73 /* LixMacManager.h */,
+				4A4264A21366D4970038EA73 /* LixMacManager.m */,
+				4AABB410132A3CF800A5A71B /* LixMacMacros.h */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -1300,7 +1296,6 @@
 				4AD537541330C79A003E4EC3 /* lixserv in Resources */,
 				4AD537B61330CF50003E4EC3 /* Credits.rtf in Resources */,
 				4A3620B21363D2660037061F /* LixServer-Info.plist in Resources */,
-				4A08D3AD142DBF4D00B4343C /* ReleaseNotes.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1312,11 +1307,10 @@
 				4A242ED3131D0CD800D6C047 /* data in Resources */,
 				4A242ED4131D0CD800D6C047 /* levels in Resources */,
 				4A9D06E71329ED5700BFFD95 /* lixIcon.icns in Resources */,
-				4AABB4D8132A3EF000A5A71B /* MainMenu.nib in Resources */,
 				4A3620B11363D2610037061F /* LixMac-Info.plist in Resources */,
 				4A6CC6561365AB5800A48E21 /* ReadMe.rtf in Resources */,
 				4A4265E11366EE910038EA73 /* Credits.rtf in Resources */,
-				4A08D3AC142DBF4D00B4343C /* ReleaseNotes.rtf in Resources */,
+				4A08D4EB142DDC3600B4343C /* MainMenu.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1400,6 +1394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A08D40D142DCC8100B4343C /* LixWindowDelegate.m in Sources */,
 				4A4264D61366D6E60038EA73 /* LixMacManager.m in Sources */,
 				4A3FB13013372E8F002C6C41 /* brow_sav.cpp in Sources */,
 				4A3FB13213372E8F002C6C41 /* b_bitmap.cpp in Sources */,
@@ -1545,7 +1540,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AB137AD1345C74400898306 /* main.cpp in Sources */,
-				4AABB78B132A4AB900A5A71B /* LixMacAdditions.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
