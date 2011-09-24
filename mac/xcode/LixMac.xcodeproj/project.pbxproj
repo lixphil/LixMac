@@ -22,6 +22,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		4A08D3AC142DBF4D00B4343C /* ReleaseNotes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4A08D3AB142DBF4D00B4343C /* ReleaseNotes.rtf */; };
+		4A08D3AD142DBF4D00B4343C /* ReleaseNotes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4A08D3AB142DBF4D00B4343C /* ReleaseNotes.rtf */; };
 		4A107F5713449040000913DF /* LixCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A3FB0BD1337258A002C6C41 /* LixCore.framework */; };
 		4A242ED2131D0CD800D6C047 /* bitmap in Resources */ = {isa = PBXBuildFile; fileRef = 4A2429FC131D0CD700D6C047 /* bitmap */; };
 		4A242ED3131D0CD800D6C047 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 4A242B11131D0CD700D6C047 /* data */; };
@@ -120,7 +122,7 @@
 		4A3FB18913372E8F002C6C41 /* bitlist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB311132A3CDD00A5A71B /* bitlist.cpp */; };
 		4A3FB18A13372E8F002C6C41 /* cutbit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB312132A3CDD00A5A71B /* cutbit.cpp */; };
 		4A3FB18B13372E8F002C6C41 /* cutbit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AABB313132A3CDD00A5A71B /* cutbit.h */; };
-		4A3FB18C13372E8F002C6C41 /* glob_gfx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB314132A3CDD00A5A71B /* glob_gfx.cpp */; };
+		4A3FB18C13372E8F002C6C41 /* glob_gfx.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB314132A3CDD00A5A71B /* glob_gfx.mm */; };
 		4A3FB18D13372E8F002C6C41 /* glob_gfx.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AABB315132A3CDD00A5A71B /* glob_gfx.h */; };
 		4A3FB18E13372E8F002C6C41 /* gra_lib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AABB316132A3CDD00A5A71B /* gra_lib.cpp */; };
 		4A3FB18F13372E8F002C6C41 /* gra_lib.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AABB317132A3CDD00A5A71B /* gra_lib.h */; };
@@ -354,6 +356,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4A08D3AB142DBF4D00B4343C /* ReleaseNotes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ReleaseNotes.rtf; path = ../res/common/ReleaseNotes.rtf; sourceTree = SOURCE_ROOT; };
 		4A0CE1F3132C80B800081F62 /* lixServerIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = lixServerIcon.icns; path = server/lixServerIcon.icns; sourceTree = "<group>"; };
 		4A0CE1F7132C83E900081F62 /* lixServerMenuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lixServerMenuIcon.png; path = server/lixServerMenuIcon.png; sourceTree = "<group>"; };
 		4A0CE211132C87A100081F62 /* lixServerMenuIconDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lixServerMenuIconDown.png; path = server/lixServerMenuIconDown.png; sourceTree = "<group>"; };
@@ -469,7 +472,7 @@
 		4AABB311132A3CDD00A5A71B /* bitlist.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bitlist.cpp; sourceTree = "<group>"; };
 		4AABB312132A3CDD00A5A71B /* cutbit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cutbit.cpp; sourceTree = "<group>"; };
 		4AABB313132A3CDD00A5A71B /* cutbit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cutbit.h; sourceTree = "<group>"; };
-		4AABB314132A3CDD00A5A71B /* glob_gfx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = glob_gfx.cpp; sourceTree = "<group>"; };
+		4AABB314132A3CDD00A5A71B /* glob_gfx.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = glob_gfx.mm; sourceTree = "<group>"; };
 		4AABB315132A3CDD00A5A71B /* glob_gfx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glob_gfx.h; sourceTree = "<group>"; };
 		4AABB316132A3CDD00A5A71B /* gra_lib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gra_lib.cpp; sourceTree = "<group>"; };
 		4AABB317132A3CDD00A5A71B /* gra_lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gra_lib.h; sourceTree = "<group>"; };
@@ -656,6 +659,7 @@
 			isa = PBXGroup;
 			children = (
 				4A6CC6551365AB5800A48E21 /* ReadMe.rtf */,
+				4A08D3AB142DBF4D00B4343C /* ReleaseNotes.rtf */,
 				29B97315FDCFA39411CA2CEA /* Lix Core */,
 				4A8D0CE4132603DD00B09851 /* Mac Extras */,
 				29B97317FDCFA39411CA2CEA /* res */,
@@ -887,7 +891,7 @@
 				4AABB311132A3CDD00A5A71B /* bitlist.cpp */,
 				4AABB312132A3CDD00A5A71B /* cutbit.cpp */,
 				4AABB313132A3CDD00A5A71B /* cutbit.h */,
-				4AABB314132A3CDD00A5A71B /* glob_gfx.cpp */,
+				4AABB314132A3CDD00A5A71B /* glob_gfx.mm */,
 				4AABB315132A3CDD00A5A71B /* glob_gfx.h */,
 				4AABB316132A3CDD00A5A71B /* gra_lib.cpp */,
 				4AABB317132A3CDD00A5A71B /* gra_lib.h */,
@@ -1296,6 +1300,7 @@
 				4AD537541330C79A003E4EC3 /* lixserv in Resources */,
 				4AD537B61330CF50003E4EC3 /* Credits.rtf in Resources */,
 				4A3620B21363D2660037061F /* LixServer-Info.plist in Resources */,
+				4A08D3AD142DBF4D00B4343C /* ReleaseNotes.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1311,6 +1316,7 @@
 				4A3620B11363D2610037061F /* LixMac-Info.plist in Resources */,
 				4A6CC6561365AB5800A48E21 /* ReadMe.rtf in Resources */,
 				4A4265E11366EE910038EA73 /* Credits.rtf in Resources */,
+				4A08D3AC142DBF4D00B4343C /* ReleaseNotes.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1444,7 +1450,7 @@
 				4A3FB18713372E8F002C6C41 /* win_game.cpp in Sources */,
 				4A3FB18913372E8F002C6C41 /* bitlist.cpp in Sources */,
 				4A3FB18A13372E8F002C6C41 /* cutbit.cpp in Sources */,
-				4A3FB18C13372E8F002C6C41 /* glob_gfx.cpp in Sources */,
+				4A3FB18C13372E8F002C6C41 /* glob_gfx.mm in Sources */,
 				4A3FB18E13372E8F002C6C41 /* gra_lib.cpp in Sources */,
 				4A3FB19013372E8F002C6C41 /* graph_bg.cpp in Sources */,
 				4A3FB19213372E8F002C6C41 /* graphic.cpp in Sources */,
