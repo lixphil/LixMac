@@ -1,6 +1,5 @@
 //
 //  LixServAppController.m
-//  This is work-in-progress!
 //
 //  Created by Phil on 11/03/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
@@ -10,7 +9,7 @@
 
 @implementation LixServAppController
 
-// TODO: Lots of unimplemented GUI stuff
+// TODO: Lots of unimplemented GUI stuff. Localize as well?
 
 -(void) awakeFromNib {
 	statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
@@ -71,25 +70,21 @@
 }
 
 -(IBAction) preferences:(id)sender {
-	NSSize screenSize = [[NSScreen mainScreen] frame].size;
-	NSSize windowSize = [preferencesWindow frame].size;
-	
-	NSPoint point = NSMakePoint((screenSize.width/2)-(windowSize.width/2), screenSize.height-(screenSize.height/3));
-	[preferencesWindow setFrameOrigin:point];
 	[preferencesWindow makeKeyAndOrderFront:self];
+    [preferencesWindow center];
 }
 
 -(IBAction) networkLog:(id)sender {
-	NSSize screenSize = [[NSScreen mainScreen] frame].size;
-	NSSize windowSize = [networkLogWindow frame].size;
-	
-	NSPoint point = NSMakePoint((screenSize.width/2)-(windowSize.width/2), (screenSize.height/2)-(windowSize.height/2));
-	[networkLogWindow setFrameOrigin:point];
 	[networkLogWindow makeKeyAndOrderFront:self];
+    [networkLogWindow center];
 }
 
 -(IBAction) quit:(id)sender {
-	NSAlert* alert = [NSAlert alertWithMessageText:@"Are you sure you want to stop and quit Lix Server?" defaultButton:@"Yes" alternateButton:@"No" otherButton:nil informativeTextWithFormat:[NSString stringWithFormat:@"All players connected to your server will be disconnected.\n\nIf you notice that the Lix Server menu is frozen, open Activity Monitor and force quit both of the 'LixServer' processes that are running.", serverPid]];
+	NSAlert* alert = [NSAlert alertWithMessageText:@"Are you sure you want to stop and quit the Lix Server?" 
+                                     defaultButton:@"Quit" 
+                                   alternateButton:@"Cancel" 
+                                       otherButton:nil 
+                         informativeTextWithFormat:[NSString stringWithFormat:@"All players connected to your server will be disconnected.\n\nIf you notice that the Lix Server menu is frozen, open Activity Monitor and force quit both of the 'LixServer' processes that are running.", serverPid]];
 	[alert setIcon:[NSImage imageNamed:@"lixServerIcon.icns"]];
 	
 	// If we agree to the alert
@@ -116,7 +111,7 @@
 	[server setLaunchPath:path];
 	[server setStandardOutput:serverStdout];
 	[server launch];
-	
+
 	serverPid = [server processIdentifier];
 }
 

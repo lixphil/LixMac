@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>lixIcon.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.lix</string>
+	<string>com.lixphil.lix</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
