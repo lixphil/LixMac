@@ -45,6 +45,8 @@
 int main(int argc, char* argv[])
 {
     allegro_init();
+    LOCK_FUNCTION(close_button_handler);
+    set_close_button_callback(close_button_handler);
     Help::timer_start();
 
     Globals::initialize();
@@ -63,9 +65,9 @@ int main(int argc, char* argv[])
 
     // Allegro graphics
     set_color_depth(32);
-    set_screen_mode(0, margs.scr_x, margs.scr_y); // in glob_gfx.h
+    set_screen_mode(margs.scr_f, margs.scr_x, margs.scr_y); // in glob_gfx.h
     set_window_title(Language::main_name_of_the_game.c_str());
-	
+    
     load_all_bitmaps();
     Network::initialize();
 
