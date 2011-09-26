@@ -215,5 +215,7 @@ void Hardware::freeze_mouse_y()
     mickey_y = 0;
 }
 
+
+
 // Und das einzelne Objekt erschaffen
 Hardware hardware;

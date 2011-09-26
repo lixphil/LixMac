@@ -84,7 +84,10 @@ browser_box_delete_question,
 
 // Lobby
 win_lobby_title,
+win_lobby_title_lobby,
+win_lobby_title_room,
 win_lobby_exit,
+win_lobby_unstable_central,
 win_lobby_start_central,
 win_lobby_start_server,
 win_lobby_start_client,
@@ -121,6 +124,9 @@ win_game_net_last_tie,
 win_game_net_all_tie,
 win_game_net_zero,
 win_game_net_all_zero,
+win_game_replay_win_one,
+win_game_replay_win_team,
+win_game_replay_tie,
 win_game_overwrite_title,
 win_game_overwrite_question,
 
@@ -156,13 +162,18 @@ win_size_u,
 win_size_d,
 win_size_x,
 win_size_y,
+win_size_hex,
 win_size_torus_x,
 win_size_torus_y,
 
 // Karten-Startausschnitt
 win_scroll_title,
+win_scroll_desc,
 win_scroll_x,
 win_scroll_y,
+win_scroll_r,
+win_scroll_g,
+win_scroll_b,
 win_scroll_jump,
 win_scroll_current,
 
@@ -186,6 +197,8 @@ win_skill_all_to,
 // Netzwerk-Chatnachrichten
 net_chat_welcome_1,
 net_chat_welcome_2,
+net_chat_unstable_1,
+net_chat_unstable_2,
 net_chat_start_server,
 net_chat_start_client,
 net_chat_start_cancel,
@@ -214,6 +227,7 @@ net_game_start,
 net_game_how_to_chat_1,
 net_game_how_to_chat_2,
 net_game_end,
+net_game_end_result,
 net_game_overtime_1,
 net_game_overtime_2,
 net_game_overtime_2_one,
@@ -227,6 +241,9 @@ option_title,
 option_user_name,
 option_user_name_ask,
 option_language,
+option_replay_auto_max,
+option_replay_auto_single,
+option_replay_auto_multi,
 option_mouse_speed,
 option_scroll_speed_edge,
 option_scroll_speed_click,
@@ -239,6 +256,9 @@ option_scroll_torus_never,
 option_scroll_torus_big,
 option_scroll_torus_always,
 option_multiple_builders,
+option_batter_priority,
+option_prioinv_middle,
+option_prioinv_right,
 option_screen_resolution,
 option_screen_windowed_res,
 option_screen_windowed,
@@ -257,6 +277,9 @@ option_debris_amount_all,
 option_debris_type,
 option_debris_type_stars,
 option_debris_type_pixels,
+option_gui_color_red,
+option_gui_color_green,
+option_gui_color_blue,
 option_info,
 option_gfx_zero,
 option_sound_load_driver,
@@ -276,8 +299,9 @@ option_key_restart,
 option_key_state_load,
 option_key_state_save,
 option_key_zoom,
-option_key_nuke,
 option_key_chat,
+option_key_spec_tribe,
+option_key_nuke,
 option_key_info_1,
 option_key_info_2,
 option_key_info_3,
@@ -309,6 +333,7 @@ option_ed_add_hatch,
 option_ed_add_goal,
 option_ed_add_deco,
 option_ed_add_hazard,
+option_ed_grid_custom,
 
 // Neuen Spieler begruessen (Mini-Dialog)
 option_new_player_title,
@@ -359,7 +384,7 @@ void Language::set(const Language lang)
         main_loading_1                = "---------- Loading Lix ----------";
         main_loading_2                = "---------- Please Wait ----------";
         main_version                  = "Version:";
-        main_website                  = "lplusplus.co.cc";
+        main_website                  = "asdfasdf.ethz.ch/~simon";
         break;
 
     case MAX:
@@ -372,7 +397,7 @@ void Language::set(const Language lang)
         main_loading_1                = "---------- Loading Lix ----------";
         main_loading_2                = "---------- Please Wait ----------";
         main_version                  = "Version:";
-        main_website                  = "lplusplus.co.cc";
+        main_website                  = "asdfasdf.ethz.ch/~simon";
 
         // Logging
         log_error                     = "Error: ";
@@ -437,7 +462,11 @@ void Language::set(const Language lang)
 
         // Lobby
         win_lobby_title               = "Network Game";
+        win_lobby_title_lobby         = "Lobby";
+        win_lobby_title_room          = "Room #";
         win_lobby_exit                = "Leave network";
+        win_lobby_unstable_central    = "(Experimental version. Please don't "
+                                        "use central server.)";
         win_lobby_start_central       = "Connect to central server";
         win_lobby_start_server        = "Host a game yourself";
         win_lobby_start_client        = "Connect to:";
@@ -474,6 +503,9 @@ void Language::set(const Language lang)
         win_game_net_all_tie          = "What's that? No true winner?";
         win_game_net_zero             = "Rock bottom! Did you nuke them?";
         win_game_net_all_zero         = "Do we have a nuclear winter?";
+        win_game_replay_win_one       = "has won!";
+        win_game_replay_win_team      = "have won!";
+        win_game_replay_tie           = "The game is a tie.";
         win_game_overwrite_title      = "Overwrite Replay?";
         win_game_overwrite_question   = "Do you really want to overwrite this replay?";
 
@@ -509,13 +541,19 @@ void Language::set(const Language lang)
         win_size_d                    = "Bottom:";
         win_size_x                    = "Width:";
         win_size_y                    = "Height:";
+        win_size_hex                  = "Show size in hexadecimal";
         win_size_torus_x              = "Wrap around horizontally";
         win_size_torus_y              = "Wrap around vertically";
 
         // Scrollposition
-        win_scroll_title              = "Initial Scrolling Position";
+        win_scroll_title              = "Level Visuals";
+        win_scroll_desc               = "Initially visible region"
+                                        " (Single Player only)";
         win_scroll_x                  = "X Coordinate (0 = left)";
         win_scroll_y                  = "Y Coordinate (0 = top)";
+        win_scroll_r                  = "Background red";
+        win_scroll_g                  = "Background green";
+        win_scroll_b                  = "Background blue";
         win_scroll_jump               = "Scroll there";
         win_scroll_current            = "Current Position";
 
@@ -538,9 +576,13 @@ void Language::set(const Language lang)
 
         // Netzwerk-Chatnachrichten
         net_chat_welcome_1            = "You can join the central server, "
-                                        "host a game by yourself,";
+                                        "host a game yourself,";
         net_chat_welcome_2            = "or enter an IP address/a host name "
-                                        "and click \"" + win_lobby_start_client + "\".";
+                                        "and click \"" + win_lobby_start_client
+                                         + "\".";
+        net_chat_unstable_1           = "This is an experimental version. "
+                                        "Host a game yourself";
+        net_chat_unstable_2           = net_chat_welcome_2;
         net_chat_start_server         = "You are the server. Other "
                                         "players can connect to you now.";
         net_chat_start_client         = "Searching a server at";
@@ -578,6 +620,7 @@ void Language::set(const Language lang)
         net_game_how_to_chat_1        = " Press [";
         net_game_how_to_chat_2        = "] to chat.";
         net_game_end                  = "The game is over.";
+        net_game_end_result           = "Game outcome:";
         net_game_overtime_1           = "has finished playing and has saved";
         net_game_overtime_2           = "lix.";
         net_game_overtime_2_one       = "one lix.";
@@ -597,6 +640,9 @@ void Language::set(const Language lang)
         option_user_name              = "Player name";
         option_user_name_ask          = "Ask for name on startup";
         option_language               = "Language";
+        option_replay_auto_max        = "Max. auto replays";
+        option_replay_auto_single     = "Auto replay in Singleplayer";
+        option_replay_auto_multi      = "Auto replay in Multiplayer";
         option_scroll_edge            = "Scroll at screen border";
         option_scroll_right           = "Scroll with right click";
         option_scroll_middle          = "Scroll with middle click";
@@ -608,7 +654,11 @@ void Language::set(const Language lang)
         option_scroll_torus_never     = "Never";
         option_scroll_torus_big       = "On big maps";
         option_scroll_torus_always    = "Always";
-        option_multiple_builders      = "Builders: mult. clicks";
+        option_multiple_builders      = "Builders: multiple clicks";
+        option_batter_priority        = "Avoid Exploder -> Batter";
+        option_prioinv_middle         = "Middle button inverts priority";
+        option_prioinv_right          = "Right button inverts priority";
+
         option_screen_windowed        = "Windowed mode*";
         // TODO: remove this later
         #ifdef ALLEGRO_MACOSX
@@ -650,7 +700,7 @@ void Language::set(const Language lang)
         option_sound_load_driver      = "Load sound driver*";
         option_sound_volume           = "Sound volume";
         option_info_sound             = "*) This option requires a program "
-                                        "restart to tkae effect.";
+                                        "restart to take effect.";
 
         option_key_unassigned         = "none";
         option_key_force_left         = "Force left";
@@ -665,8 +715,9 @@ void Language::set(const Language lang)
         option_key_state_load         = "Load state";
         option_key_state_save         = "Save state";
         option_key_zoom               = "Zoom";
-        option_key_nuke               = "Nuke";
         option_key_chat               = "Chat";
+        option_key_spec_tribe         = "Cycle spectated teams";
+        option_key_nuke               = "Nuke";
         option_key_info_1             = "A hotkey assigned to";
         option_key_info_2             = "multiple skills will";
         option_key_info_3             = "alternate between them.";
@@ -698,6 +749,7 @@ void Language::set(const Language lang)
         option_ed_add_goal            = "Add goal";
         option_ed_add_deco            = "Add deco";
         option_ed_add_hazard          = "Add hazard";
+        option_ed_grid_custom         = "Custom grid size";
 
         // Neuen Spieler begruessen (Mini-Dialog)
         option_new_player_title       = "Lix";
@@ -714,8 +766,8 @@ eb[Editor::FILE_SAVE_AS]
  = "Save As: Saves the current level under a new file name.";
 eb[Editor::GRID_2]
  = "Grid 2: Rounds object coordinates to multiples of 2.";
-eb[Editor::GRID_10]
- = "Grid 10: Rounds object coordinates to multiples of 10.";
+eb[Editor::GRID_CUSTOM]
+ = "Custom grid: This grid size is settable in the options.";
 eb[Editor::GRID_16]
  = "Grid 16: Rounds object coordinates to multiples of 16.";
 eb[Editor::SELECT_ALL]
@@ -751,8 +803,8 @@ eb[Editor::HELP]
 eb[Editor::MENU_SIZE]
  = "Measures: Set the size and the topology for the level.";
 eb[Editor::MENU_SCROLL]
- = "Scrolling position: Set the Single Player scrolling position.";
-eb[Editor::MENU_LEMMING]
+ = "Visuals: Set the scrolling position and background color.";
+eb[Editor::MENU_VARS]
  = "Variables: Set the fundamental level variables.";
 eb[Editor::MENU_SKILL]
  = "Skills: Set the usable lix skills.";
@@ -787,7 +839,7 @@ eb[Editor::ADD_HAZARD]
         main_loading_1                = "------- Lix wird geladen -------";
         main_loading_2                = "--------- Bitte warten ---------";
         main_version                  = "Version:";
-        main_website                  = "lplusplus.co.cc";
+        main_website                  = "asdfasdf.ethz.ch/~simon";
 
         // Logging
         log_error                     = "Fehler:";
@@ -852,7 +904,11 @@ eb[Editor::ADD_HAZARD]
 
         // Lobby
         win_lobby_title               = "Netzwerkspiel";
+        win_lobby_title_lobby         = "Lobby";
+        win_lobby_title_room          = "Raum Nr. ";
         win_lobby_exit                = "Netz verlassen";
+        win_lobby_unstable_central    = "(Experimentelle Version, bitte nicht "
+                                        "zentralen Server nutzen.)";
         win_lobby_start_central       = "Verbinden zu zentralem Server";
         win_lobby_start_server        = "Selbst ein Spiel hosten";
         win_lobby_start_client        = "Verbinden zu:";
@@ -889,6 +945,9 @@ eb[Editor::ADD_HAZARD]
         win_game_net_all_tie          = "Wie das? Kein klarer Sieger?";
         win_game_net_zero             = "Null komma nix, diese Runde!";
         win_game_net_all_zero         = "Haben wir nuklearen Winter?";
+        win_game_replay_win_one       = "hat gewonnen!";
+        win_game_replay_win_team      = "haben gewonnen!";
+        win_game_replay_tie           = "Das Spiel ist unentschieden.";
         win_game_overwrite_title      = "Replay ueberschreiben?";
         win_game_overwrite_question   = "Soll dieses Replay wirklich ueberschrieben werden?";
 
@@ -924,13 +983,19 @@ eb[Editor::ADD_HAZARD]
         win_size_d                    = "Unten:";
         win_size_x                    = "Breite:";
         win_size_y                    = "Hoehe:";
+        win_size_hex                  = "Hexadezimal anzeigen";
         win_size_torus_x              = "Horizontal rundumgehend";
         win_size_torus_y              = "Vertikal rundumgehend";
 
         // Scrollposition
-        win_scroll_title              = "Start-Scrollposition";
+        win_scroll_title              = "Aussehen des Levels";
+        win_scroll_desc               = "Anfangs sichtbarer Bereich"
+                                        " (nur Einzelspieler)";
         win_scroll_x                  = "X-Koordinate (0 = links)";
         win_scroll_y                  = "Y-Koordinate (0 = oben)";
+        win_scroll_r                  = "Hintergrund Rot";
+        win_scroll_g                  = "Hintergrund Gruen";
+        win_scroll_b                  = "Hintergrund Blau";
         win_scroll_jump               = "Dorthin scrollen";
         win_scroll_current            = "Aktuelle Position";
 
@@ -954,8 +1019,12 @@ eb[Editor::ADD_HAZARD]
         // Netzwerk-Chatnachrichten
         net_chat_welcome_1            = "Verbinde zum Zentralserver, eroeffne "
                                         "selbst ein Spiel oder gib";
-        net_chat_welcome_2            = "eine IP-Adresse/einen Rechnernamen ein und waehle"
-                                        " \"" + win_lobby_start_client + "\".";
+        net_chat_welcome_2            = "eine IP-Adresse/einen Rechnernamen "
+                                        "ein und waehle \""
+                                        + win_lobby_start_client + "\".";
+        net_chat_unstable_1           = "Diese Version ist experimentell. "
+                                        "Eroeffne selbst ein Spiel oder gib";
+        net_chat_unstable_2           = net_chat_welcome_2;
         net_chat_start_server         = "Du bist der Server. Andere Spieler "
                                         "koennen zu dir verbinden.";
         net_chat_start_client         = "Suche Server unter";
@@ -1000,6 +1069,7 @@ eb[Editor::ADD_HAZARD]
         net_game_how_to_chat_1        = " Du kannst mit [";
         net_game_how_to_chat_2        = "] chatten.";
         net_game_end                  = "Das Spiel ist zu Ende.";
+        net_game_end_result           = "Spielergebnis:";
         net_game_overtime_1           = "hat zu Ende gespielt und";
         net_game_overtime_2           = "Lix gerettet.";
         net_game_overtime_2_one       = "eine Lix gerettet.";
@@ -1018,6 +1088,9 @@ eb[Editor::ADD_HAZARD]
         option_group[5]               = "Audio";
         option_user_name              = "Spielername";
         option_user_name_ask          = "Namensfrage bei Start";
+        option_replay_auto_max        = "Max. Auto-Replays";
+        option_replay_auto_single     = "Auto-Replay Einzelspieler";
+        option_replay_auto_multi      = "Auto-Replay Mehrspieler";
         option_scroll_edge            = "Scrollen am Bildrand";
         option_scroll_right           = "Scrollen bei Rechtsklick";
         option_scroll_middle          = "Scrollen bei mittl. Maust.";
@@ -1030,6 +1103,10 @@ eb[Editor::ADD_HAZARD]
         option_scroll_torus_big       = "Grosse Level";
         option_scroll_torus_always    = "Immer";
         option_multiple_builders      = "Builder mehrm. klickbar";
+        option_batter_priority        = "Exploder -> Batter vermeiden";
+        option_prioinv_middle         = "Mittl. Taste invert. Prioritaet";
+        option_prioinv_right          = "Rechte Taste invert. Prioritaet";
+
         option_screen_windowed        = "Fenstermodus*";
         option_screen_resolution      = "Vollbild-Aufloesung**";
         option_screen_windowed_res    = "Fenster-Aufloesung";
@@ -1048,6 +1125,9 @@ eb[Editor::ADD_HAZARD]
         option_debris_type            = "Truemmer-Aussehen";
         option_debris_type_stars      = "Sterne, Wolken";
         option_debris_type_pixels     = "Pixel";
+        option_gui_color_red          = "Menuefarbe Rot";
+        option_gui_color_green        = "Menuefarbe Gruen";
+        option_gui_color_blue         = "Menuefarbe Blau";
         option_info                   = "*) [Alt] + [Enter] wechselt jederzeit"
                                        " zwischen Fenster- und Vollbildmodus.";
         option_gfx_zero               = "**) Setze beides auf 0, um deine norm"
@@ -1071,8 +1151,9 @@ eb[Editor::ADD_HAZARD]
         option_key_state_load         = "Stand laden";
         option_key_state_save         = "Stand spei.";
         option_key_zoom               = "Zoom";
-        option_key_nuke               = "Atombombe";
         option_key_chat               = "Chat";
+        option_key_spec_tribe         = "Anderem Team zuschauen";
+        option_key_nuke               = "Atombombe";
         option_key_info_1             = "Ein mehrfach zugewiesener";
         option_key_info_2             = "Hotkey alterniert zwischen";
         option_key_info_3             = "seinen Faehigkeiten.";
@@ -1104,6 +1185,7 @@ eb[Editor::ADD_HAZARD]
         option_ed_add_goal            = "Ziel hinzuf.";
         option_ed_add_deco            = "Deko hinzuf.";
         option_ed_add_hazard          = "Gefahr hinzuf.";
+        option_ed_grid_custom         = "Benutzerdef. Rastergroesse";
 
         // Neuen Spieler begruessen (Mini-Dialog)
         option_new_player_title       = "Lix";
@@ -1116,7 +1198,7 @@ eb[Editor::FILE_EXIT]    = "Beenden: Editor verlassen, auf Wunsch Aenderungen sp
 eb[Editor::FILE_SAVE]    = "Speichern: Level unter dem bisherigen Dateinamen abspeichern.";
 eb[Editor::FILE_SAVE_AS] = "Speichern unter: Level unter einem neuen Dateinamen abspeichern.";
 eb[Editor::GRID_2]       = "Raster 2: Objekt-Koordinaten beim Umherziehen auf 2er runden.";
-eb[Editor::GRID_10]      = "Raster 10: Objekt-Koordinaten beim Umherziehen auf 10er runden.";
+eb[Editor::GRID_CUSTOM]  = "Benutzerdef. Raster: In den Hauptmenue-Optionen verstellbar.";
 eb[Editor::GRID_16]      = "Raster 16: Objekt-Koordinaten beim Umherziehen auf 16er runden.";
 eb[Editor::SELECT_ALL]   = "Alles: Alle Objekte auf dem Bildschirm in die Auswahl setzen.";
 eb[Editor::SELECT_FRAME] = "Rahmen: Mehrfachauswahl von Objekten durch Rahmenziehen.";
@@ -1134,8 +1216,8 @@ eb[Editor::SELECT_NOOW]  = "Nicht ueberschreiben: Ausgew. Ter. ueberschr. nur du
 eb[Editor::VIEW_ZOOM]    = "Zoom: Vergroesserung der Karte ein- oder ausschalten.";
 eb[Editor::HELP]         = "Hilfe: Aktiviert/deaktiviert diese Button-Hilfstexte.";
 eb[Editor::MENU_SIZE]    = "Abmessungen: Festlegen der Groesse und Topologie des Levels.";
-eb[Editor::MENU_SCROLL]  = "Scrollposition: Festlegen der Einzelspieler-Scroll-Startposition";
-eb[Editor::MENU_LEMMING] = "Variablen: Festlegen grundsaetzlicher Level-Variablen.";
+eb[Editor::MENU_SCROLL]  = "Aussehen: Festlegen der Startposition und Hintergrundfarbe.";
+eb[Editor::MENU_VARS]    = "Variablen: Festlegen grundsaetzlicher Level-Variablen.";
 eb[Editor::MENU_SKILL]   = "Faehigkeiten: Festlegen der nutzbaren Lix-Faehigkeiten.";
 eb[Editor::ADD_TERRAIN]  = "Terrain: Ein durchgrabbares Terrain-Object platzieren.";
 eb[Editor::ADD_STEEL]    = "Stahl: Ein nicht durchgrabbares Stahlobjekt platzieren.";

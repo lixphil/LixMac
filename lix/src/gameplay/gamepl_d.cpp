@@ -76,18 +76,11 @@ void Gameplay::draw() {
         replay_sign.set_y((int) (5 + 5 * -std::sin(local_ticks * 0.07)));
         replay_sign.draw();
     }
-    // Alle Faehigkeiten
-
-    // Panel
-    if (!Network::get_started() && !pan.get_mode_single())
-     pan.set_mode_single();
 
     // Statusanzeige
     if (cs.clock > 0) pan.stats.set_show_clock();
     pan.stats.set_clock(cs.clock);
     pan.draw();
-
-    chat.draw();
 
     // Mauszeiger ganz obenauf
 	mouse_cursor.set_x(hardware.get_mx()-mouse_cursor_offset);

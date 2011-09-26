@@ -37,10 +37,18 @@
  *
  */
 
-#include "lmain.h" // Main object, as commented upon above
+#include "lmain.h" // Main object, as commented on above
 #include "user.h"
 
 #include "../lix/lix_enum.h" // initialize the strings in there
+
+struct MainArgs {
+    int  scr_f, scr_x, scr_y;
+    bool sound_load_driver;
+};
+MainArgs parse_main_arguments(int, char*[]);
+
+
 
 int main(int argc, char* argv[])
 {
@@ -54,9 +62,18 @@ int main(int argc, char* argv[])
     Log::initialize();
     LixEn::initialize();
 
+    // Check whether the Globals decided we're in one of the accepted
+    // working directories, so all files are found. Otherwise, exit with error.
+    if (! Help::dir_exists(gloB->dir_data_bitmap)) {
+        allegro_message("%s", gloB->error_wrong_working_dir.c_str());
+        Log::deinitialize();
+        Globals::deinitialize();
+        return -1;
+    }
+
     gloB->load();
     useR->load();
-    Help::MainArgs margs = Help::parse_main_arguments(argc, argv);
+    MainArgs margs = parse_main_arguments(argc, argv);
 
     // Allegro preparations, no graphics function are called yet
     install_keyboard();
@@ -67,13 +84,12 @@ int main(int argc, char* argv[])
     set_color_depth(32);
     set_screen_mode(margs.scr_f, margs.scr_x, margs.scr_y); // in glob_gfx.h
     set_window_title(Language::main_name_of_the_game.c_str());
-    
+
     load_all_bitmaps();
     Network::initialize();
 
     // Main loop. See other/lmain.cpp for this.
     LMain* l_main = new LMain;
-	
     l_main->main_loop();
     delete l_main;
 
@@ -82,13 +98,57 @@ int main(int argc, char* argv[])
     gloB->save();
 
     Network::deinitialize();
-    Sound::deinitialize();
     destroy_all_bitmaps();
+    Sound::deinitialize();
     Log::deinitialize();
     Globals::deinitialize();
-	
+
     // don't call allegro_exit(), doing that causes the program
     // to not terminate in rare cases
     return 0;
 }
 END_OF_MAIN()
+
+
+
+// ############################################################################
+// ############################################################################
+// ############################################################################
+
+
+
+MainArgs parse_main_arguments(int argc, char *argv[])
+{
+    MainArgs main_args;
+    main_args.scr_f = !useR->screen_windowed;
+    main_args.scr_x = 0;
+    main_args.scr_y = 0;
+    main_args.sound_load_driver = gloB->sound_load_driver;
+
+    // Check all arguments for any occurence of the switch-defining letters
+    for (int i = 1; i < argc; ++i)
+     for (unsigned pos = 0; argv[i][pos] != '\0'; ++pos)
+     switch (argv[i][pos]) {
+    case 'w':
+        main_args.scr_f = false;
+        main_args.scr_x = LEMSCR_X;
+        main_args.scr_y = LEMSCR_Y;
+        break;
+
+    case 'n':
+        // The global config file and the user file have already been loaded.
+        // To enable the question for the user name, we remove some data again.
+        gloB->user_name = "";
+        useR->load();
+        break;
+
+    case 'o':
+        main_args.sound_load_driver = false;
+        break;
+
+    default:
+        break;
+    }
+    return main_args;
+}
+// end of parse_main_arguments()

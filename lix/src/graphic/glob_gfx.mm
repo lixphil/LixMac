@@ -5,10 +5,10 @@
 
 #include "glob_gfx.h"
 #include "gra_lib.h" // initialisieren
-#include "graphic.h" // Weil bitmap.cpp die Lemming-Graphics erschafft/killt
+#include "graphic.h" // Weil bitmap.cpp die Lix-Graphics erschafft/killt
 
 #include "../api/manager.h" // initializes the manager
-#include "../lix/lix.h" // call the initializer of Lemming
+#include "../lix/lix.h" // call the initializer of Lixxie
 #include "../level/obj_lib.h"
 #include "../other/globals.h"
 #include "../other/help.h" // Dateisuche
@@ -24,7 +24,7 @@
 Torbit *pre_screen;
 
 // Farben
-std::vector <int> color(COL_MAX);
+std::vector <AlCol> color(COL_MAX);
 
 // Schriftarten
 FONT* font_sml;
@@ -33,11 +33,10 @@ FONT* font_nar;
 FONT* font_big;
 
 // Diese werden in load_all_bitmaps() aufgerufen
-void make_all_colors();
 void make_all_bitmap_replacements();
-void make_all_lemming_colors();
-void make_lemming_color(const LixEn::Style, const int = 0, const int = 0,
-                                              const int = 0, const int = 0);
+void make_all_lix_colors();
+void make_lix_color(const LixEn::Style, const int = 0, const int = 0,
+                                        const int = 0, const int = 0);
 
 void load_all_bitmaps()
 {
@@ -74,10 +73,10 @@ void load_all_bitmaps()
     ObjLib::initialize();
 
     // Schriftarten laden
-    font_sml = load_font(gloB->file_bitmap_font_sml.c_str(), 0, 0);
-    font_med = load_font(gloB->file_bitmap_font_med.c_str(), 0, 0);
-    font_nar = load_font(gloB->file_bitmap_font_nar.c_str(), 0, 0);
-    font_big = load_font(gloB->file_bitmap_font_big.c_str(), 0, 0);
+    font_sml = load_font(gloB->file_bitmap_font_sml.get_rootful().c_str(),0,0);
+    font_med = load_font(gloB->file_bitmap_font_med.get_rootful().c_str(),0,0);
+    font_nar = load_font(gloB->file_bitmap_font_nar.get_rootful().c_str(),0,0);
+    font_big = load_font(gloB->file_bitmap_font_big.get_rootful().c_str(),0,0);
 
     // Falls Datei nicht gefunden, Standardfont nutzen, damit das Programm
     // nicht abstuerzt
@@ -86,6 +85,7 @@ void load_all_bitmaps()
     font_nar = font_nar ? font_nar : font;
     font_big = font_big ? font_big : font;
 }
+
 
 
 void destroy_all_bitmaps()

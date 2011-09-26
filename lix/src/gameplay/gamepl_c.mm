@@ -154,7 +154,7 @@ void Gameplay::calc_self()
         }
 
         // Pause
-        if (pan.get_mode_single() && pan.pause.get_clicked() || [[LixMacManager sharedManager] quitAlertOpen]) {
+        if (pan.pause.get_clicked() || [[LixMacManager sharedManager] quitAlertOpen]) {
             pan.pause.set_on(!pan.pause.get_on());
         }
         // Zoom

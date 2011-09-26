@@ -122,8 +122,7 @@ void LMain::calc()
 
         case Menu::START_REPLAY: {
             gameplay_started_with_replay = true;
-            Replay r(useR->replay_last_dir
-                   + useR->replay_last_file);
+            Replay r(useR->replay_last_level);
             gameplay = new Gameplay(&r);
             delete menu;
             menu = 0;
@@ -191,6 +190,8 @@ void LMain::calc()
             set_screen_mode(!gloB->screen_fullscreen_now);
         }
 }
+
+
 
 void LMain::draw()
 {
