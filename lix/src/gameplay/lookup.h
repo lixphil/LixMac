@@ -22,20 +22,37 @@ class Lookup {
 public:
 
     typedef short LoNr; // this is at least 2 bytes long
+    
+    // Have to declare these symbols here, ld reports bit_fire and bit_water as missing - phil
+    #ifdef ALLEGRO_MACOSX
+        static const LoNr bit_terrain;
+        static const LoNr bit_steel;
+        static const LoNr bit_ow_left; // non-implem. one-way walls
+        static const LoNr bit_ow_right; // same
 
-    static const LoNr bit_terrain    = 0x0001;
-    static const LoNr bit_steel      = 0x0002;
-    static const LoNr bit_ow_left    = 0x0004; // non-implem. one-way walls
-    static const LoNr bit_ow_right   = 0x0008; // same
+        static const LoNr bit_goal;
+        static const LoNr bit_goal_prox; // Near goal, can't block here
+        static const LoNr bit_fire;
+        static const LoNr bit_water;
 
-    static const LoNr bit_goal       = 0x0010;
-    static const LoNr bit_goal_prox  = 0x0020; // Near goal, can't block here
-    static const LoNr bit_fire       = 0x0040;
-    static const LoNr bit_water      = 0x0080;
-
-    static const LoNr bit_trap       = 0x0100;
-    static const LoNr bit_fling      = 0x0200;
-    static const LoNr bit_trampoline = 0x0400;
+        static const LoNr bit_trap;
+        static const LoNr bit_fling;
+        static const LoNr bit_trampoline;
+    #else 
+        static const LoNr bit_terrain = 0x0001;
+        static const LoNr bit_steel = 0x0002;
+        static const LoNr bit_ow_left = 0x0004; // non-implem. one-way walls
+        static const LoNr bit_ow_right = 0x0008; // same
+        
+        static const LoNr bit_goal = 0x0010;
+        static const LoNr bit_goal_prox = 0x0020; // Near goal, can't block here
+        static const LoNr bit_fire = 0x0040;
+        static const LoNr bit_water = 0x0080;
+        
+        static const LoNr bit_trap = 0x0100;
+        static const LoNr bit_fling = 0x0200;
+        static const LoNr bit_trampoline = 0x0400;
+    #endif
 
     //     xl,  yl,  tor_x tor_y
     Lookup(int = 1, int = 1, bool = false, bool = false);

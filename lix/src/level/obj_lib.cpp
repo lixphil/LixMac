@@ -309,15 +309,15 @@ const Object* ObjLib::get(const std::string& str)
         int set =  string_to_orig_set(setname);
         if (set != MAX) {
             int c = *++stritr; // c contains either 's' or 't' now
-            int id = 0;
+            int id_ = 0;
             while (++stritr != str.end()) {
-                id *= 10;
-                id += (*stritr - '0');
+                id_ *= 10;
+                id_ += (*stritr - '0');
             }
             // Return the proper object
-            if (setname == vgaspec_string) return get_orig_vgaspec(id);
-            if (c == 's' || c == 'S')      return get_orig_special(set, id);
-            else                           return get_orig_terrain(set, id);
+            if (setname == vgaspec_string) return get_orig_vgaspec(id_);
+            if (c == 's' || c == 'S')      return get_orig_special(set, id_);
+            else                           return get_orig_terrain(set, id_);
         }
         // Do not return 0 here just because setname didn't match anything
         // from the preset names. Some person might have put in a '-' into

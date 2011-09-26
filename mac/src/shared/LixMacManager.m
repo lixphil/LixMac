@@ -12,7 +12,7 @@
 @implementation LixMacManager
 
 @synthesize wantToQuit;
-@synthesize quitAlertOpen;
+@synthesize alertOpen;
 @synthesize isFullscreen;
 @synthesize isWindowMoving;
 @synthesize mouseHidden;
@@ -53,7 +53,8 @@ static LixMacManager *sharedManager = nil;
 }
 
 - (void)beginQuitAlert {
-	[self setQuitAlertOpen:YES];
+    // Pause the game
+	[self setAlertOpen:YES];
     
     // Get out of fullscreen so we can see the alert
     if ([self isFullscreen]) {
@@ -67,23 +68,80 @@ static LixMacManager *sharedManager = nil;
                                        otherButton:nil 
                          informativeTextWithFormat:@"Any unsaved progress or changes made to levels will be lost."];
     
-    [alert beginSheetModalForWindow:allegroWindow modalDelegate:self didEndSelector:@selector(quitAlertDidEnd:returnCode:contextInfo:) contextInfo:nil];
+    [alert beginSheetModalForWindow:allegroWindow 
+                      modalDelegate:self 
+                     didEndSelector:@selector(quitAlertDidEnd:returnCode:contextInfo:) 
+                        contextInfo:nil];
     [NSCursor unhide]; // Sometimes the cursor is still hidden
 }
 
 - (void) quitAlertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
-	[self setQuitAlertOpen:NO];
+	[self setAlertOpen:NO];
 	if (returnCode == NSOKButton)
 		[self setWantToQuit:YES];
 }
 
+- (void)beginWrongWorkingDirectoryAlert {
+    NSAlert* alert = [NSAlert alertWithMessageText:@"Lix cannot be run inside this folder, because it is write-protected." 
+                                     defaultButton:@"Copy" 
+                                   alternateButton:@"Quit" 
+                                       otherButton:nil 
+                         informativeTextWithFormat:@"%@%@%@", 
+                                                      @"Choose Copy to copy the application into the current account's Applications ",
+                                                      @"folder (it will be created if it doesn't exist).\n\n",
+                                                      @"Alternatively if you have the privileges, try running the game inside an Adminstrator account."];
+    
+    [alert beginSheetModalForWindow:nil 
+                      modalDelegate:self 
+                     didEndSelector:@selector(wrongWorkingDirectoryAlertDidEnd:returnCode:contextInfo:) 
+                        contextInfo:nil];
+}
+
+- (void) wrongWorkingDirectoryAlertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+    [self setAlertOpen:NO];
+    [[alert window] orderOut:nil];
+	if (returnCode == NSOKButton) {
+        // Copy the bundle via the Finder
+        // We need to do this via AppleScript, since NSWorkspace has a method only available in 10.6
+        NSAppleScript* script = [[NSAppleScript alloc] initWithSource:[NSString stringWithFormat:@"%@%@%@%@%@%@",
+                                   @"tell application \"Finder\"\n",
+                                   @"if not (exists folder \"Applications\" of (path to home folder)) then\n",
+                                   @"make new folder at (path to home folder) with properties {name:\"Applications\"}\n",
+                                   @"end if\n",
+                                   @"duplicate POSIX file \"/Applications/Lix.app\" to (path to home folder) & \"Applications\" as string\n",
+                                   @"end tell"]];
+        NSMutableDictionary* error;
+        if ([script executeAndReturnError:&error] == nil) {
+            NSAlert* errorAlert = [NSAlert alertWithMessageText:@"There was an error trying to copy the Lix application." 
+                                                  defaultButton:@"Quit" 
+                                                alternateButton:nil 
+                                                    otherButton:nil 
+                                      informativeTextWithFormat:@"The error was: \"%@\"\n\nTry copying the application manually to any location inside your user account's folder.", 
+                                   [error valueForKey:@"NSAppleScriptErrorBriefMessage"]];
+            [errorAlert runModal];
+            [self setWantToQuit:YES];
+        } else {
+            NSAlert* successAlert = [NSAlert alertWithMessageText:@"Lix copied successfully to the new location." 
+                                                    defaultButton:@"Relaunch" 
+                                                  alternateButton:nil 
+                                                      otherButton:nil 
+                                        informativeTextWithFormat:@"Click Relaunch to quit this instance of Lix, and run the game in the new location."];
+            [successAlert runModal];
+            // openURL: didn't work
+            [[NSWorkspace sharedWorkspace] openFile:[@"~/Applications/Lix.app" stringByExpandingTildeInPath]];
+            [self setWantToQuit:YES];
+        }
+    } else {
+        [self setWantToQuit:YES];
+    }
+}
 
 #pragma mark -
 #pragma mark Hardware input improvements
 
 - (NSPoint) mouseLocationFromGameWindowSizeOfX:(int)scrX andY:(int)scrY {
     NSPoint mouseLocation = [NSEvent mouseLocation];
-    if (([self isWindowMoving] || [self quitAlertOpen] || ![allegroWindow isKeyWindow]) && ![self isFullscreen]) { // window is inactive/moving
+    if (([self isWindowMoving] || [self alertOpen] || ![allegroWindow isKeyWindow]) && ![self isFullscreen]) { // window is inactive/moving
         mouseLocation.x = scrX / 2;
         mouseLocation.y = scrY / 2;
     } else if ([allegroWindow isKeyWindow]) {
@@ -99,6 +157,10 @@ static LixMacManager *sharedManager = nil;
             if (![self mouseHidden]) { [NSCursor hide]; [self setMouseHidden:YES]; }
         }
     } else if ([self isFullscreen]) { // must be fullscreen
+        // always hide the mouse in fullscreen
+        [self setMouseHidden:YES];
+        [NSCursor hide];
+        
         mouseLocation.y = scrY - mouseLocation.y; // invert Y coord
     }
 
@@ -113,14 +175,12 @@ static LixMacManager *sharedManager = nil;
 
 @implementation LixAdditions
 
--(id) init {
-    //[NSMenu 
-    return [super init];
-}
-
-
 -(IBAction) enterFullScreenMode:(id)sender {
     [[LixMacManager sharedManager] setShouldSwitchScreenMode:YES];
 }
 
+-(IBAction) openGameDocsFolder:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:
+     [NSURL URLWithString:[NSString stringWithFormat:@"%@/Contents/Resources/doc", [[NSBundle mainBundle] bundleURL]]]];
+}
 @end

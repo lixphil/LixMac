@@ -13,7 +13,7 @@
 
 @interface LixMacManager : NSObject {
 	BOOL wantToQuit;
-	BOOL quitAlertOpen;
+	BOOL alertOpen;
     BOOL isFullscreen;
     BOOL mouseHidden;
     BOOL isWindowMoving;
@@ -23,7 +23,7 @@
 
 // Accessed from other Obj-C classes, and game source files with extension mm (some headers too)
 @property (assign, readwrite) BOOL wantToQuit;
-@property (assign, readwrite) BOOL quitAlertOpen;
+@property (assign, readwrite) BOOL alertOpen;
 @property (assign, readwrite) BOOL isFullscreen;
 @property (assign, readwrite) BOOL mouseHidden;
 @property (assign, readwrite) BOOL isWindowMoving;
@@ -33,6 +33,7 @@
 
 // Core functions
 - (void) beginQuitAlert; // called by Allegro's close window handler function in lmain.cpp
+- (void) beginWrongWorkingDirectoryAlert;
 - (void) replaceAllegroWindowDelegate;
 
 // Hardware input improvements
@@ -41,5 +42,8 @@
 @end
 
 @interface LixAdditions : NSObject
+
 -(IBAction) enterFullScreenMode:(id)sender;
+-(IBAction) openGameDocsFolder:(id)sender;
+
 @end

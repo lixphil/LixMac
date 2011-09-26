@@ -23,12 +23,12 @@
 }
 
 -(void) windowWillMove:(NSNotification *)notification {
-    NSLog(@"window moving");
+    //NSLog(@"window moving");
     [[LixMacManager sharedManager] setIsWindowMoving:YES];
 }
 
 -(void) windowDidMove:(NSNotification *)notification {
-    NSLog(@"window stopped moving");
+    //NSLog(@"window stopped moving");
     [[LixMacManager sharedManager] setIsWindowMoving:NO];
 }
 

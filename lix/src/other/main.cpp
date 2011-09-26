@@ -42,6 +42,10 @@
 
 #include "../lix/lix_enum.h" // initialize the strings in there
 
+#ifdef ALLEGRO_MACOSX
+    #import "LixMacManager.h"
+#endif
+
 struct MainArgs {
     int  scr_f, scr_x, scr_y;
     bool sound_load_driver;
@@ -64,10 +68,19 @@ int main(int argc, char* argv[])
 
     // Check whether the Globals decided we're in one of the accepted
     // working directories, so all files are found. Otherwise, exit with error.
-    if (! Help::dir_exists(gloB->dir_data_bitmap)) {
-        allegro_message("%s", gloB->error_wrong_working_dir.c_str());
+    if ( ! Help::dir_exists(gloB->dir_data_bitmap)) {
+        #ifdef ALLEGRO_MACOSX
+            [[LixMacManager sharedManager] beginWrongWorkingDirectoryAlert];
+            // Kinda hack, but we have to work with Allegro
+            while (![[LixMacManager sharedManager] wantToQuit]) {
+                rest(1);
+            }
+        #else
+            allegro_message("%s", gloB->error_wrong_working_dir.c_str());
+        #endif
         Log::deinitialize();
         Globals::deinitialize();
+        
         return -1;
     }
 
