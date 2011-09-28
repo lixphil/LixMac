@@ -72,6 +72,8 @@ static LixMacManager *sharedManager = nil;
                       modalDelegate:self 
                      didEndSelector:@selector(quitAlertDidEnd:returnCode:contextInfo:) 
                         contextInfo:nil];
+    
+    [self setMouseHidden:NO];
     [NSCursor unhide]; // Sometimes the cursor is still hidden
 }
 
@@ -81,7 +83,7 @@ static LixMacManager *sharedManager = nil;
 		[self setWantToQuit:YES];
 }
 
-- (void)beginWrongWorkingDirectoryAlert {
+- (void)beginBadPermissionsAlert {
     NSAlert* alert = [NSAlert alertWithMessageText:@"Lix cannot be run inside this folder, because it is write-protected." 
                                      defaultButton:@"Copy" 
                                    alternateButton:@"Quit" 
@@ -90,26 +92,27 @@ static LixMacManager *sharedManager = nil;
                                                       @"Choose Copy to copy the application into the current account's Applications ",
                                                       @"folder (it will be created if it doesn't exist).\n\n",
                                                       @"Alternatively if you have the privileges, try running the game inside an Adminstrator account."];
-    
     [alert beginSheetModalForWindow:nil 
                       modalDelegate:self 
-                     didEndSelector:@selector(wrongWorkingDirectoryAlertDidEnd:returnCode:contextInfo:) 
+                     didEndSelector:@selector(badPermissionsAlertDidEnd:returnCode:contextInfo:) 
                         contextInfo:nil];
 }
 
-- (void) wrongWorkingDirectoryAlertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+- (void) badPermissionsAlertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
     [self setAlertOpen:NO];
     [[alert window] orderOut:nil];
 	if (returnCode == NSOKButton) {
         // Copy the bundle via the Finder
         // We need to do this via AppleScript, since NSWorkspace has a method only available in 10.6
-        NSAppleScript* script = [[NSAppleScript alloc] initWithSource:[NSString stringWithFormat:@"%@%@%@%@%@%@",
-                                   @"tell application \"Finder\"\n",
-                                   @"if not (exists folder \"Applications\" of (path to home folder)) then\n",
-                                   @"make new folder at (path to home folder) with properties {name:\"Applications\"}\n",
-                                   @"end if\n",
-                                   @"duplicate POSIX file \"/Applications/Lix.app\" to (path to home folder) & \"Applications\" as string\n",
-                                   @"end tell"]];
+        NSAppleScript* script = [[NSAppleScript alloc] initWithSource:
+                                   [NSString stringWithFormat:
+                                    @"tell application \"Finder\"\n \
+                                         if not (exists folder \"Applications\" of (path to home folder)) then\n \
+                                              make new folder at (path to home folder) with properties {name:\"Applications\"}\n \
+                                         end if\n \
+                                         duplicate POSIX file \"%@\" to (path to home folder) & \"Applications\" as string\n \
+                                      end tell", 
+                                        [[NSBundle mainBundle] bundlePath]]];
         NSMutableDictionary* error;
         if ([script executeAndReturnError:&error] == nil) {
             NSAlert* errorAlert = [NSAlert alertWithMessageText:@"There was an error trying to copy the Lix application." 
@@ -141,9 +144,12 @@ static LixMacManager *sharedManager = nil;
 
 - (NSPoint) mouseLocationFromGameWindowSizeOfX:(int)scrX andY:(int)scrY {
     NSPoint mouseLocation = [NSEvent mouseLocation];
+    // TODO: rewrite this logic?
     if (([self isWindowMoving] || [self alertOpen] || ![allegroWindow isKeyWindow]) && ![self isFullscreen]) { // window is inactive/moving
         mouseLocation.x = scrX / 2;
         mouseLocation.y = scrY / 2;
+        [self setMouseHidden:NO];
+        [NSCursor unhide];
     } else if ([allegroWindow isKeyWindow]) {
         NSRect windowFrame = [allegroWindow frame]; // Get the position of the window
         // These coordinates seem to be dead accurate
@@ -157,13 +163,13 @@ static LixMacManager *sharedManager = nil;
             if (![self mouseHidden]) { [NSCursor hide]; [self setMouseHidden:YES]; }
         }
     } else if ([self isFullscreen]) { // must be fullscreen
+        [allegroWindow makeMainWindow];
         // always hide the mouse in fullscreen
         [self setMouseHidden:YES];
         [NSCursor hide];
         
         mouseLocation.y = scrY - mouseLocation.y; // invert Y coord
     }
-
     return mouseLocation;
 }
     

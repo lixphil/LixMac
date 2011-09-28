@@ -33,7 +33,7 @@
 
 // Core functions
 - (void) beginQuitAlert; // called by Allegro's close window handler function in lmain.cpp
-- (void) beginWrongWorkingDirectoryAlert;
+- (void) beginBadPermissionsAlert;
 - (void) replaceAllegroWindowDelegate;
 
 // Hardware input improvements

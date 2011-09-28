@@ -31,6 +31,7 @@
 		4A2FBDA914302E6F00790176 /* liballeg.4.4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */; };
 		4A2FBDAC14302E7B00790176 /* liballeg.4.4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */; };
 		4A2FBE1E14303E4500790176 /* doc in Resources */ = {isa = PBXBuildFile; fileRef = 4A2FBE1114303E4500790176 /* doc */; };
+		4A2FC09B1431AB1900790176 /* liballeg.4.4.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */; };
 		4A3620B11363D2610037061F /* LixMac-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A3620AF1363D25C0037061F /* LixMac-Info.plist */; };
 		4A3620B21363D2660037061F /* LixServer-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A3620B01363D25C0037061F /* LixServer-Info.plist */; };
 		4A3FB21613372FC2002C6C41 /* LixCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3FB0BD1337258A002C6C41 /* LixCore.framework */; };
@@ -51,11 +52,8 @@
 		4A5FE3F613655F9B006350A3 /* libenet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5FE3F213655F84006350A3 /* libenet.a */; };
 		4A6CC5BA136591AC00A48E21 /* liballeg-main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6CC5B9136591AC00A48E21 /* liballeg-main.a */; };
 		4A6CC5C5136592FD00A48E21 /* liballeg-main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6CC5B9136591AC00A48E21 /* liballeg-main.a */; };
-		4A6CC601136597D300A48E21 /* liballeg.4.4.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */; };
-		4A6CC60B1365982C00A48E21 /* liballeg.4.4.1.dylib in Copy Allegro dylib */ = {isa = PBXBuildFile; fileRef = 4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */; };
 		4A6CC629136599D700A48E21 /* liballeg.4.4.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A6CC5F5136597AA00A48E21 /* liballeg.4.4.1.dylib */; };
 		4A6CC63313659A7100A48E21 /* liballeg-main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6CC5B9136591AC00A48E21 /* liballeg-main.a */; };
-		4A6CC6561365AB5800A48E21 /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4A6CC6551365AB5800A48E21 /* ReadMe.rtf */; };
 		4A951A6D136C0053000CA604 /* Lix.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 846C14D30B1F65CE0012B69D /* Lix.app */; };
 		4A97A72D142E238F00E9EF93 /* ImportantNotes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4A97A72C142E238F00E9EF93 /* ImportantNotes.rtf */; };
 		4A97A72E142E238F00E9EF93 /* ImportantNotes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4A97A72C142E238F00E9EF93 /* ImportantNotes.rtf */; };
@@ -324,15 +322,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A6CC60E1365984300A48E21 /* Copy Allegro dylib */ = {
+		4A2FC09C1431AB4600790176 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4A6CC60B1365982C00A48E21 /* liballeg.4.4.1.dylib in Copy Allegro dylib */,
+				4A2FC09B1431AB1900790176 /* liballeg.4.4.1.dylib in CopyFiles */,
 			);
-			name = "Copy Allegro dylib";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4A6CC62C136599DC00A48E21 /* CopyFiles */ = {
@@ -361,7 +358,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4A6CC601136597D300A48E21 /* liballeg.4.4.1.dylib in CopyFiles */,
 				4AE4D9A2134351C30090659E /* LixCore.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1248,11 +1244,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A3FB0C01337258B002C6C41 /* Build configuration list for PBXNativeTarget "LixCore" */;
 			buildPhases = (
-				4A6CC60E1365984300A48E21 /* Copy Allegro dylib */,
+				4A2FC09C1431AB4600790176 /* CopyFiles */,
 				4A3FB0B81337258A002C6C41 /* Headers */,
 				4A3FB0BA1337258A002C6C41 /* Sources */,
 				4A3FB0BB1337258A002C6C41 /* Frameworks */,
-				4A6CC612136598A000A48E21 /* Fix dyld search path for liballeg.dylib */,
+				4A6CC612136598A000A48E21 /* Fix dyld search path for Allegro */,
 			);
 			buildRules = (
 			);
@@ -1310,7 +1306,7 @@
 				846C14C80B1F65CE0012B69D /* Resources */,
 				846C14C90B1F65CE0012B69D /* Sources */,
 				846C14CB0B1F65CE0012B69D /* Frameworks */,
-				4A6CC5DC1365962700A48E21 /* Fix dyld search path of liballeg.dylib */,
+				4A6CC5DC1365962700A48E21 /* Fix dyld search path for Allegro */,
 			);
 			buildRules = (
 			);
@@ -1377,7 +1373,6 @@
 				4A2FBE1E14303E4500790176 /* doc in Resources */,
 				4A3620B11363D2610037061F /* LixMac-Info.plist in Resources */,
 				4A9D06E71329ED5700BFFD95 /* lixIcon.icns in Resources */,
-				4A6CC6561365AB5800A48E21 /* ReadMe.rtf in Resources */,
 				4A4265E11366EE910038EA73 /* Credits.rtf in Resources */,
 				4A08D4EB142DDC3600B4343C /* MainMenu.nib in Resources */,
 				4A97A72D142E238F00E9EF93 /* ImportantNotes.rtf in Resources */,
@@ -1387,33 +1382,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4A6CC5DC1365962700A48E21 /* Fix dyld search path of liballeg.dylib */ = {
+		4A6CC5DC1365962700A48E21 /* Fix dyld search path for Allegro */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Fix dyld search path of liballeg.dylib";
+			name = "Fix dyld search path for Allegro";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# This will change the search path of liballeg to be inside this bundle's Frameworks folder.\ncd \"$BUILD_DIR/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/$PRODUCT_NAME.app/Contents/MacOS\"\ninstall_name_tool -change liballeg.4.4.dylib @executable_path/../Frameworks/liballeg.4.4.1.dylib $PRODUCT_NAME";
+			shellScript = "# This will change the search path of liballeg to be inside LixCore's Frameworks folder.\ncd \"$BUILD_DIR/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/$PRODUCT_NAME.app/Contents/MacOS\"\ninstall_name_tool -change liballeg.4.4.dylib @executable_path/../Frameworks/LixCore.framework/Versions/A/Frameworks/liballeg.4.4.1.dylib $PRODUCT_NAME";
 		};
-		4A6CC612136598A000A48E21 /* Fix dyld search path for liballeg.dylib */ = {
+		4A6CC612136598A000A48E21 /* Fix dyld search path for Allegro */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Fix dyld search path for liballeg.dylib";
+			name = "Fix dyld search path for Allegro";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# This will change the search path of liballeg to be inside this bundle's Frameworks folder.\ncd \"$BUILD_DIR/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/$PRODUCT_NAME.framework/Versions/$FRAMEWORK_VERSION/\"\ninstall_name_tool -change liballeg.4.4.dylib @executable_path/../Frameworks/liballeg.4.4.1.dylib $PRODUCT_NAME";
+			shellScript = "# This will change the search path of liballeg to be inside this bundle's Frameworks folder.\ncd \"$BUILD_DIR/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/$PRODUCT_NAME.framework/Versions/$FRAMEWORK_VERSION/\"\ninstall_name_tool -change liballeg.4.4.dylib @executable_path/../Frameworks/LixCore.framework/Versions/A/Frameworks/liballeg.4.4.1.dylib $PRODUCT_NAME";
 		};
 		4A6CC64313659DA300A48E21 /* Fix dyld search path of liballeg.dylib */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1664,11 +1659,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = "../info/LixCore-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-				);
-				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../lib\"";
 				PREBINDING = NO;
 				PRODUCT_NAME = LixCore;
 			};
@@ -1736,10 +1726,12 @@
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_VERSION = "";
-				HEADER_SEARCH_PATHS = /Library/Frameworks/Allegro.framework/Headers;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lenet";
-				SDKROOT = "";
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
 				SYMROOT = build;
 				ZERO_LINK = NO;
@@ -1752,19 +1744,8 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-				);
-				HEADER_SEARCH_PATHS = "\"$(LOCAL_LIBRARY_DIR)/Frameworks/Allegro.framework/Versions/Current/Headers\"";
 				INFOPLIST_FILE = "../info/LixMac-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/usr/local/lib,
-					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-				);
-				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../lib\"";
 				OTHER_LDFLAGS = "-lenet";
 				PRODUCT_NAME = Lix;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;

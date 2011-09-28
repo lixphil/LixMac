@@ -44,6 +44,7 @@
 
 #ifdef ALLEGRO_MACOSX
     #import "LixMacManager.h"
+    #import <Cocoa/Cocoa.h> // needed for the NSFileManager calls
 #endif
 
 struct MainArgs {
@@ -66,21 +67,21 @@ int main(int argc, char* argv[])
     Log::initialize();
     LixEn::initialize();
 
-    // Check whether the Globals decided we're in one of the accepted
-    // working directories, so all files are found. Otherwise, exit with error.
-    if ( ! Help::dir_exists(gloB->dir_data_bitmap)) {
-        #ifdef ALLEGRO_MACOSX
-            [[LixMacManager sharedManager] beginWrongWorkingDirectoryAlert];
+    #ifdef ALLEGRO_MACOSX
+        if (![[NSFileManager defaultManager] isWritableFileAtPath:[[NSBundle mainBundle] bundlePath]]) {
+            [[LixMacManager sharedManager] beginBadPermissionsAlert];
             // Kinda hack, but we have to work with Allegro
             while (![[LixMacManager sharedManager] wantToQuit]) {
                 rest(1);
             }
-        #else
+    #else
+        // Check whether the Globals decided we're in one of the accepted
+        // working directories, so all files are found. Otherwise, exit with error.
+        if ( ! Help::dir_exists(gloB->dir_data_bitmap)) {
             allegro_message("%s", gloB->error_wrong_working_dir.c_str());
-        #endif
+    #endif
         Log::deinitialize();
         Globals::deinitialize();
-        
         return -1;
     }
 

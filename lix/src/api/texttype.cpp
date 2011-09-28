@@ -98,13 +98,11 @@ void Texttype::calc_self()
             set_off();
             if (on_enter_void && on_enter && hardware.key_enter_once())
              on_enter(on_enter_void);
-			printf("Being called");
         }
         else if (hardware.key_once(KEY_ESC)) {
             set_off();
             text = text_backup;
             if (on_esc_void && on_esc) on_esc(on_esc_void);
-			printf("Being called 2");
         }
         // Oder doch noch im Schreibmodus bleiben? Dann Tastatur lesen.
         else {
@@ -125,7 +123,6 @@ void Texttype::calc_self()
             {
                 text += kascii;
                 if (!scroll && get_too_long(text)) text.resize(text.size()-1);
-				printf("Being called 3");
             }
             // Ende Tastenverarbeitung
         }
