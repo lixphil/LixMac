@@ -58,8 +58,6 @@ MainArgs parse_main_arguments(int, char*[]);
 int main(int argc, char* argv[])
 {
     allegro_init();
-    LOCK_FUNCTION(close_button_handler);
-    set_close_button_callback(close_button_handler);
     Help::timer_start();
 
     Globals::initialize();

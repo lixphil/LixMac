@@ -564,7 +564,7 @@
 		fRef = 4A4264A21366D4970038EA73 /* LixMacManager.m */;
 		name = "LixMacManager.m: 169";
 		rLen = 0;
-		rLoc = 7449;
+		rLoc = 7327;
 		rType = 0;
 		vrLen = 1499;
 		vrLoc = 6167;
@@ -639,9 +639,9 @@
 	};
 	4A4264A21366D4970038EA73 /* LixMacManager.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1460, 2736}}";
-			sepNavSelRange = "{6032, 0}";
-			sepNavVisRange = "{3150, 1470}";
+			sepNavIntBoundsRect = "{{0, 0}, {1460, 3040}}";
+			sepNavSelRange = "{7069, 0}";
+			sepNavVisRange = "{3469, 2784}";
 			sepNavWindowFrame = "{{548, 82}, {1103, 932}}";
 		};
 	};
@@ -1261,9 +1261,9 @@
 	};
 	4ACB7EAE142F1327002C4F8A /* main.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1133, 2752}}";
-			sepNavSelRange = "{2622, 0}";
-			sepNavVisRange = "{1857, 706}";
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 2736}}";
+			sepNavSelRange = "{1855, 0}";
+			sepNavVisRange = "{2391, 1177}";
 			sepNavWindowFrame = "{{38, 87}, {1051, 915}}";
 		};
 	};
