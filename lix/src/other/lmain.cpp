@@ -14,11 +14,15 @@
     #include "LixMacMacros.h"
 #endif
 
-// TODO: Simon will be implementing an official close handler - update my code to use his handler when the time comes - phil
-void close_button_handler(void) {
-    [[LixMacManager sharedManager] beginQuitAlert];
+static bool lmain_exit_window_button_pressed = false;
+
+static void lmain_on_exit_handler()
+{
+    lmain_exit_window_button_pressed = true;
+    #ifdef ALLEGRO_MACOSX
+        [[LixMacManager sharedManager] beginQuitAlert];
+    #endif
 }
-END_OF_FUNCTION(close_button_handler);
 
 LMain::LMain()
 :
@@ -38,6 +42,7 @@ LMain::LMain()
         // Allegro has initialized by this stage, so it's safe to replace the window delegate
         [[LixMacManager sharedManager] replaceAllegroWindowDelegate];
     #endif
+    ::set_close_button_callback(&lmain_on_exit_handler);
 }
 
 LMain::~LMain()
@@ -166,7 +171,9 @@ void LMain::calc()
 
     // Hotkey combination to terminate the program instantly from
     // everywhere. This doesn't bug the user about unsaved data.
-    if (key[KEY_ESC] && key[KEY_LSHIFT]) {
+    // Same goes for clicking the [x] button of the Allegro window.
+    if ((key[KEY_ESC] && key[KEY_LSHIFT])
+     || lmain_exit_window_button_pressed) {
         exit = true;
     }
     
@@ -174,8 +181,6 @@ void LMain::calc()
         if ([[LixMacManager sharedManager] wantToQuit])
             exit = true;
     #endif
-    
-    
     
     #ifdef ALLEGRO_MACOSX
         // The variable below is set to YES via the Game menu item

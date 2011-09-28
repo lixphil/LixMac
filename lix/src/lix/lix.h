@@ -351,15 +351,17 @@ public:
            void play_sound        (const UpdateArgs&, Sound::Id);
            void play_sound_if_trlo(const UpdateArgs&, Sound::Id);//see effect.h
 
-    inline int  get_frame()            { return frame; }
+    inline int  get_frame() const      { return frame; }
     inline void set_frame(const int i) { frame = i;    }
 
            bool is_last_frame();
            void next_frame(int = 0);
 
-    inline Lookup::LoNr get_body_encounters() { return enc_body;         }
-    inline Lookup::LoNr get_foot_encounters() { return enc_foot;         }
-    inline void         set_no_encounters()   { enc_body = enc_foot = 0; }
+    inline Lookup::LoNr get_body_encounters()    { return enc_body;         }
+    inline Lookup::LoNr get_foot_encounters()    { return enc_foot;         }
+    inline void         set_no_encounters()      { enc_body = enc_foot = 0; }
+    inline void         set_body_encounters(Lookup::LoNr n) { enc_body = n; }
+    inline void         set_foot_encounters(Lookup::LoNr n) { enc_foot = n; }
 
            void assclk        (const LixEn::Ac);
            void become        (const LixEn::Ac);
