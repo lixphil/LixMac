@@ -26,6 +26,10 @@ struct MainArgs {
     bool stop;
     int  port;
     bool nolock;
+    
+    #ifdef __APPLE__
+    bool nodaemon; // so we can be launchd-compliant
+    #endif
 };
 
 MainArgs parse_main_arguments(int, char*[]);
@@ -38,12 +42,22 @@ int main(int argc, char* argv[])
 
     std::string lockfile = "/var/run/lixd.pid";
 
+    #ifdef __APPLE__
+    if (ma.start || (ma.start && ma.nodaemon)) {
+    #else
     if (ma.start) {
-        if (ma.nolock) lockfile = "";
-        int daem_ret = OS::daemonize(lockfile);
-        if (daem_ret > 0) return 0;
-        if (daem_ret < 0) return -1;
-
+    #endif
+        #ifdef __APPLE__
+        if (!ma.nodaemon) {
+        #endif
+            if (ma.nolock) lockfile = "";
+            int daem_ret = OS::daemonize(lockfile);
+            if (daem_ret > 0) return 0;
+            if (daem_ret < 0) return -1;
+        #ifdef __APPLE__
+        }      
+        #endif
+        
         enet_initialize();
 
         // Create server. Note that we use the number of updates per second as
@@ -74,7 +88,11 @@ int main(int argc, char* argv[])
 
     else {
         std::cerr << "Usage:" << std::endl
+        #ifdef __APPLE__
+         << "    lixd start [-p <port>] [--no-lock | --no-daemon]" << std::endl
+        #else
          << "    lixd start [-p <port>] [--no-lock]" << std::endl
+        #endif
          << "    lixd stop" << std::endl
          << "See the file `doc/lixd.txt' for more information." << std::endl;
          return -1;
@@ -105,6 +123,10 @@ MainArgs parse_main_arguments(int argc, char* argv[])
             if (! (portstring >> ret.port)) ret.port = globals_port_default;
         }
         else if (s == "--no-lock") ret.nolock = true;
+
+        #ifdef __APPLE__
+        else if (s == "--no-daemon") ret.nodaemon = true;
+        #endif
     }
 
     return ret;

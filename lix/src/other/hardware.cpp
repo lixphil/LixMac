@@ -9,7 +9,7 @@
 #include "user.h"
 
 #ifdef ALLEGRO_MACOSX
-	#import "LixMacManager.h"
+	#import "LixManager.h"
 #endif
 
 const unsigned int Hardware::doubleclick_speed(Help::timer_ticks_per_second/3);
@@ -44,8 +44,8 @@ void Hardware::main_loop() {
     //////////
     
 	#ifdef ALLEGRO_MACOSX
-		// get the mouse position from LixMacManager
-        NSPoint mouse_loc = [[LixMacManager sharedManager] mouseLocationFromGameWindowSizeOfX:LEMSCR_X andY:LEMSCR_Y];
+		// get the mouse position from LixManager
+        NSPoint mouse_loc = [[LixManager sharedManager] mouseLocationFromGameWindowSizeOfX:LEMSCR_X andY:LEMSCR_Y];
         mouse_own_x = mouse_loc.x;
         mouse_own_y = mouse_loc.y;
 	#else

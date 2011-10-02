@@ -13,7 +13,8 @@
 #ifdef _WIN32
     // nothing included yet
 #endif
-#ifdef __unix__
+
+#if defined(__unix__) || defined(__APPLE__)
     #include <csignal>
     #include <cerrno>
     #include <fcntl.h>
@@ -28,7 +29,7 @@ namespace OS {
 static std::string lockfilename;
 static bool        signal_received = false;
 
-#ifdef __unix__
+#if defined(__unix__) || defined(__APPLE__) 
     static bool    kill_daemon(::pid_t);
 #endif
 
@@ -44,8 +45,8 @@ int daemonize(const std::string& argument_lockfilename)
     return 0;
 
 #endif
-#ifdef __unix__
-
+#if defined(__unix__) || defined(__APPLE__)
+    
     lockfilename = argument_lockfilename;
 
     bool lock = ! lockfilename.empty();
@@ -147,7 +148,7 @@ void yield()
     // not implemented
 
 #endif
-#ifdef __unix__
+#if defined(__unix__) || defined(__APPLE__) 
 
    ::timeval timeout;
    timeout.tv_sec = 0;
@@ -169,7 +170,7 @@ void update_timer(
     *timer_ticks = 0;
 
 #endif
-#ifdef __unix__
+#if defined(__unix__) || defined(__APPLE__) 
 
     static ::timeval epoch = { 0, 0 };
     if (epoch.tv_sec == 0) gettimeofday(&epoch, 0);
@@ -209,7 +210,7 @@ void free_lockfile()
     // not implemented
 
 #endif
-#ifdef __unix__
+#if defined(__unix__) || defined(__APPLE__) 
 
     if (! lockfilename.empty()) ::remove(lockfilename.c_str());
 
@@ -217,8 +218,8 @@ void free_lockfile()
 }
 
 
-
-#ifdef __unix__
+    
+#if defined(__unix__) || defined(__APPLE__)
 static bool kill_daemon(const ::pid_t pid)
 {
     if (pid < 2) return false;
@@ -250,7 +251,7 @@ bool kill_daemon(const std::string& lf)
     // not implemented
 
 #endif
-#ifdef __unix__
+#if defined(__unix__) || defined(__APPLE__) 
 
     lockfilename = lf;
 

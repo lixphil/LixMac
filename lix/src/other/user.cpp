@@ -117,7 +117,7 @@ User::User()
 
     screen_scaling         (2),
     screen_border_colored  (true),
-    screen_windowed        (false),
+    screen_windowed        (true), // TODO: change this back when fullscreen key input properly works
     arrows_replay          (true),
     arrows_network         (true),
     debris_amount          (2),

@@ -10,17 +10,18 @@
 #include "../graphic/sound.h"
 
 #ifdef ALLEGRO_MACOSX
-    #include "LixMacManager.h"
-    #include "LixMacMacros.h"
+    #include "LixManager.h"
+    #include "LixMacros.h"
+#else
+    static bool lmain_exit_window_button_pressed = false;
 #endif
-
-static bool lmain_exit_window_button_pressed = false;
 
 static void lmain_on_exit_handler()
 {
-    lmain_exit_window_button_pressed = true;
     #ifdef ALLEGRO_MACOSX
-        [[LixMacManager sharedManager] beginQuitAlert];
+        [[LixManager sharedManager] beginQuitAlert];
+    #else   
+        lmain_exit_window_button_pressed = true;
     #endif
 }
 
@@ -40,7 +41,7 @@ LMain::LMain()
 {
     #ifdef ALLEGRO_MACOSX
         // Allegro has initialized by this stage, so it's safe to replace the window delegate
-        [[LixMacManager sharedManager] replaceAllegroWindowDelegate];
+        [[LixManager sharedManager] replaceAllegroWindowDelegate];
     #endif
     ::set_close_button_callback(&lmain_on_exit_handler);
 }
@@ -172,20 +173,19 @@ void LMain::calc()
     // Hotkey combination to terminate the program instantly from
     // everywhere. This doesn't bug the user about unsaved data.
     // Same goes for clicking the [x] button of the Allegro window.
-    if ((key[KEY_ESC] && key[KEY_LSHIFT])
-     || lmain_exit_window_button_pressed) {
+    if ((key[KEY_ESC] && key[KEY_LSHIFT])) {
         exit = true;
     }
     
     #ifdef ALLEGRO_MACOSX
-        if ([[LixMacManager sharedManager] wantToQuit])
+        if ([[LixManager sharedManager] wantToQuit])
             exit = true;
     #endif
     
     #ifdef ALLEGRO_MACOSX
         // The variable below is set to YES via the Game menu item
-        if ([[LixMacManager sharedManager] shouldSwitchScreenMode]) {
-            [[LixMacManager sharedManager] setShouldSwitchScreenMode:NO];
+        if ([[LixManager sharedManager] shouldSwitchScreenMode]) {
+            [[LixManager sharedManager] setShouldSwitchScreenMode:NO];
     #else
         // Hotkey combination for fullscreen
         // Do not use key_enter_once() here, this is the time we want it with alt

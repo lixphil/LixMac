@@ -43,7 +43,7 @@
 #include "../lix/lix_enum.h" // initialize the strings in there
 
 #ifdef ALLEGRO_MACOSX
-    #import "LixMacManager.h"
+    #import "LixManager.h"
     #import <Cocoa/Cocoa.h> // needed for the NSFileManager calls
 #endif
 
@@ -67,9 +67,9 @@ int main(int argc, char* argv[])
 
     #ifdef ALLEGRO_MACOSX
         if (![[NSFileManager defaultManager] isWritableFileAtPath:[[NSBundle mainBundle] bundlePath]]) {
-            [[LixMacManager sharedManager] beginBadPermissionsAlert];
+            [[LixManager sharedManager] beginBadPermissionsAlert];
             // Kinda hack, but we have to work with Allegro
-            while (![[LixMacManager sharedManager] wantToQuit]) {
+            while (![[LixManager sharedManager] wantToQuit]) {
                 rest(1);
             }
     #else

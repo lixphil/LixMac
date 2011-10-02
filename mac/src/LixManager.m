@@ -1,15 +1,15 @@
 //
-//  LixMacManager.m
+//  LixManager.m
 //  LixMac
 //
 //  Created by Phil on 26/04/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "LixMacManager.h"
-#import "LixMacMacros.h"
+#import "LixManager.h"
+#import "LixMacros.h"
 
-@implementation LixMacManager
+@implementation LixManager
 
 @synthesize wantToQuit;
 @synthesize alertOpen;
@@ -20,9 +20,9 @@
 
 // *** Start singleton definition
 
-static LixMacManager *sharedManager = nil;
+static LixManager *sharedManager = nil;
 
-+ (LixMacManager*)sharedManager {
++ (LixManager*)sharedManager {
     if (sharedManager == nil) {
         sharedManager = [[super allocWithZone:NULL] init];
     }
@@ -182,7 +182,7 @@ static LixMacManager *sharedManager = nil;
 @implementation LixAdditions
 
 -(IBAction) enterFullScreenMode:(id)sender {
-    [[LixMacManager sharedManager] setShouldSwitchScreenMode:YES];
+    [[LixManager sharedManager] setShouldSwitchScreenMode:YES];
 }
 
 -(IBAction) openGameDocsFolder:(id)sender {

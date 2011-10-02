@@ -1,5 +1,5 @@
 //
-//  LixMacManager.h
+//  LixManager.h
 //  LixMac
 //
 //  The main class which provides the Mac compatibility
@@ -11,7 +11,7 @@
 #import <Cocoa/Cocoa.h>
 #import "LixWindowDelegate.h"
 
-@interface LixMacManager : NSObject {
+@interface LixManager : NSObject {
 	BOOL wantToQuit;
 	BOOL alertOpen;
     BOOL isFullscreen;
@@ -29,7 +29,7 @@
 @property (assign, readwrite) BOOL isWindowMoving;
 @property (assign, readwrite) BOOL shouldSwitchScreenMode;
 
-+ (LixMacManager*) sharedManager; 
++ (LixManager*) sharedManager; 
 
 // Core functions
 - (void) beginQuitAlert; // called by Allegro's close window handler function in lmain.cpp

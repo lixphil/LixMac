@@ -10,7 +10,7 @@
 //
 
 #import "LixWindowDelegate.h"
-#import "LixMacManager.h"
+#import "LixManager.h"
 
 @implementation LixWindowDelegate
 
@@ -18,18 +18,18 @@
     // We have to implement a handler here as well, since a runtime error can occur 
     // if the user quits the game (by any means, menu/window), dismissing the alert
     // and again tries to quit the game by closing the window
-    [[LixMacManager sharedManager] beginQuitAlert]; 
+    [[LixManager sharedManager] beginQuitAlert]; 
     return NO;
 }
 
 -(void) windowWillMove:(NSNotification *)notification {
     //NSLog(@"window moving");
-    [[LixMacManager sharedManager] setIsWindowMoving:YES];
+    [[LixManager sharedManager] setIsWindowMoving:YES];
 }
 
 -(void) windowDidMove:(NSNotification *)notification {
     //NSLog(@"window stopped moving");
-    [[LixMacManager sharedManager] setIsWindowMoving:NO];
+    [[LixManager sharedManager] setIsWindowMoving:NO];
 }
 
 @end

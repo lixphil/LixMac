@@ -17,8 +17,8 @@
 #include "../other/user.h"
 
 #ifdef ALLEGRO_MACOSX
-    #import "LixMacMacros.h"
-    #import "LixMacManager.h"
+    #import "LixMacros.h"
+    #import "LixManager.h"
 #endif
 
 Torbit *pre_screen;
@@ -164,9 +164,9 @@ void set_screen_mode(const bool full, int res_x, int res_y)
     #ifdef ALLEGRO_MACOSX
         // This is so we can know how to handle mouse/keyboard input in fullscreen - phil
         if (mode == 1) {
-            [[LixMacManager sharedManager] setIsFullscreen:YES];
+            [[LixManager sharedManager] setIsFullscreen:YES];
         } else if (mode == 2) {
-            [[LixMacManager sharedManager] setIsFullscreen:NO];
+            [[LixManager sharedManager] setIsFullscreen:NO];
         }
     #endif
     
@@ -193,6 +193,8 @@ void set_screen_mode(const bool full, int res_x, int res_y)
 
     clear_screen_at_next_blit = true;
     gloB->screen_fullscreen_now = (mode == GFX_AUTODETECT_FULLSCREEN);
+    
+    [allegroWindow setLevel:NSMainMenuWindowLevel];
     
     // Do this so the mouse doesn't scroll stupidly after a switch.
     // In hardware.cpp, the mouse is always set to the center anyway, to trap
