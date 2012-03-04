@@ -4,7 +4,7 @@ Welcome! This is the repo of the Mac OS X fork for SimonN's game, Lix. It contai
 
 The project contains two targets:
 - LixMac, the main game
-- lixd, a daemon used to run a dedicated Lix server (currently unfinished)
+- lixd, a daemon used to run a dedicated Lix server (unfinished)
 
 
 DEVELOPMENT BUILDS

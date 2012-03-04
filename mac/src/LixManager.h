@@ -18,10 +18,11 @@
     BOOL mouseHidden;
     BOOL isWindowMoving;
     BOOL shouldSwitchScreenMode;
+    BOOL hasDedicatedServer;
     LixWindowDelegate* windowDelegate;
 }
 
-// Accessed from other Obj-C classes, and game source files with extension mm (some headers too)
+// Accessed from other Obj-C classes, and a few game source files
 @property (assign, readwrite) BOOL wantToQuit;
 @property (assign, readwrite) BOOL alertOpen;
 @property (assign, readwrite) BOOL isFullscreen;
@@ -29,6 +30,7 @@
 @property (assign, readwrite) BOOL isWindowMoving;
 @property (assign, readwrite) BOOL shouldSwitchScreenMode;
 
+// Singleton accessor
 + (LixManager*) sharedManager; 
 
 // Core functions
@@ -41,9 +43,15 @@
 
 @end
 
-@interface LixAdditions : NSObject
+@interface LixAdditions : NSObject {
+    BOOL hasDedicatedServer;
+    
+    // Outlets
+    IBOutlet NSMenuItem* installServerItem;
+}
 
 -(IBAction) enterFullScreenMode:(id)sender;
 -(IBAction) openGameDocsFolder:(id)sender;
+-(IBAction) openImportantNotes:(id)sender;
 
 @end

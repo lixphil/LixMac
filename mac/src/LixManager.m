@@ -132,11 +132,13 @@ static LixManager *sharedManager = nil;
             [successAlert runModal];
             // openURL: didn't work
             [[NSWorkspace sharedWorkspace] openFile:[@"~/Applications/Lix.app" stringByExpandingTildeInPath]];
+            [script release];
             [self setWantToQuit:YES];
         }
     } else {
         [self setWantToQuit:YES];
     }
+    
 }
 
 #pragma mark -
@@ -163,7 +165,6 @@ static LixManager *sharedManager = nil;
             if (![self mouseHidden]) { [NSCursor hide]; [self setMouseHidden:YES]; }
         }
     } else if ([self isFullscreen]) { // must be fullscreen
-        [allegroWindow makeMainWindow];
         // always hide the mouse in fullscreen
         [self setMouseHidden:YES];
         [NSCursor hide];
@@ -181,6 +182,46 @@ static LixManager *sharedManager = nil;
 
 @implementation LixAdditions
 
+-(void) awakeFromNib {
+    // Placing main initialization code here, because the -init method in LixAdditions
+    // gets called 4 times by the nib... (well more precisely Allegro)
+    
+    // Determine whether lixd is already installed
+    NSTask* packageQueryTask = [[NSTask alloc] init];
+    [packageQueryTask setLaunchPath:@"/usr/sbin/pkgutil"];
+    [packageQueryTask setArguments:[NSArray arrayWithObjects:@"--files", @"com.lixphil.lixd", nil]];
+    [packageQueryTask setStandardError:[NSPipe pipe]];
+    [packageQueryTask setStandardOutput:[NSPipe pipe]];
+    [packageQueryTask launch];
+    [packageQueryTask waitUntilExit];
+    
+    [installServerItem setTarget:self];
+    if ([packageQueryTask terminationStatus] == 0) {
+        hasDedicatedServer = YES;
+        [installServerItem setTitle:@"Dedicated Server Settings"];
+        // TODO: uncomment these when the PrefPane is done
+        //[installServerItem setAction:@selector(enterDedicatedServerSettings:)];
+    } else {
+        hasDedicatedServer = NO;
+        [installServerItem setTitle:@"Install Dedicated Server..."];
+        //[installServerItem setAction:@selector(installDedicatedServer:)];
+    }
+    
+    [packageQueryTask release];
+}
+
+-(IBAction) installDedicatedServer:(id)sender {
+    // Run the package inside the bundle
+    [[NSWorkspace sharedWorkspace] openFile:[[NSBundle mainBundle] pathForResource:@"LixServer" ofType:@"pkg"]];
+    [NSApp hide:sender];
+}
+    
+-(IBAction) enterDedicatedServerSettings:(id)sender {
+    // Directly open the prefPane
+    [[NSWorkspace sharedWorkspace] openFile:@"/Library/PreferencePanes/LixServer.prefPane"];
+    [NSApp hide:sender];
+}
+
 -(IBAction) enterFullScreenMode:(id)sender {
     [[LixManager sharedManager] setShouldSwitchScreenMode:YES];
 }
@@ -188,5 +229,15 @@ static LixManager *sharedManager = nil;
 -(IBAction) openGameDocsFolder:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:
      [NSURL URLWithString:[NSString stringWithFormat:@"%@/Contents/Resources/doc", [[NSBundle mainBundle] bundleURL]]]];
+    [NSApp hide:sender];
 }
+
+-(IBAction) openImportantNotes:(id)sender {
+    [[NSWorkspace sharedWorkspace] openFile:
+     [NSString stringWithFormat:@"%@/Contents/Resources/ImportantNotes.rtf", [[NSBundle mainBundle] bundlePath]]
+                            withApplication:@"TextEdit"];
+    [NSApp hide:sender];
+}
+
+
 @end
